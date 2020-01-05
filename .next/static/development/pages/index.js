@@ -47,37 +47,25 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Companies)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
-      activeCompanyIndex: 0
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "incrementActiveCompany", function () {
       var _this$props = _this.props,
           companies = _this$props.companies,
-          setActiveCompany = _this$props.setActiveCompany;
-      var activeCompanyIndex = _this.state.activeCompanyIndex;
+          setActiveCompany = _this$props.setActiveCompany,
+          activeCompanyIndex = _this$props.activeCompanyIndex;
 
       if (activeCompanyIndex <= companies.length - 1) {
-        setActiveCompany(companies[activeCompanyIndex + 1].fields);
-
-        _this.setState({
-          activeCompanyIndex: activeCompanyIndex + 1
-        });
+        setActiveCompany(companies[activeCompanyIndex + 1].fields, activeCompanyIndex + 1);
       }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "decrementActiveCompany", function () {
       var _this$props2 = _this.props,
           companies = _this$props2.companies,
-          setActiveCompany = _this$props2.setActiveCompany;
-      var activeCompanyIndex = _this.state.activeCompanyIndex;
+          setActiveCompany = _this$props2.setActiveCompany,
+          activeCompanyIndex = _this$props2.activeCompanyIndex;
 
       if (activeCompanyIndex > 0) {
-        setActiveCompany(companies[activeCompanyIndex + 1].fields);
-
-        _this.setState({
-          activeCompanyIndex: activeCompanyIndex - 1
-        });
+        setActiveCompany(companies[activeCompanyIndex - 1].fields, activeCompanyIndex - 1);
       }
     });
 
@@ -90,14 +78,14 @@ function (_React$Component) {
       var _this$props3 = this.props,
           companies = _this$props3.companies,
           activeCompany = _this$props3.activeCompany,
-          setActiveCompany = _this$props3.setActiveCompany;
-      var activeCompanyIndex = this.state.activeCompanyIndex;
+          setActiveCompany = _this$props3.setActiveCompany,
+          activeCompanyIndex = _this$props3.activeCompanyIndex;
 
       if (!companies) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 24
           },
           __self: this
         });
@@ -105,7 +93,7 @@ function (_React$Component) {
         className: "companies-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 29
         },
         __self: this
       }, __jsx("div", {
@@ -113,14 +101,14 @@ function (_React$Component) {
         className: "nav-arrow clickable",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 30
         },
         __self: this
       }, __jsx("i", {
-        "class": "material-icons",
+        className: "material-icons",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 30
         },
         __self: this
       }, "navigate_before_rounded")), __jsx("div", {
@@ -128,14 +116,14 @@ function (_React$Component) {
         className: "nav-arrow clickable",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 31
         },
         __self: this
       }, __jsx("i", {
-        "class": "material-icons",
+        className: "material-icons",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 31
         },
         __self: this
       }, "navigate_next_rounded")), companies.map(function (company, index) {
@@ -144,17 +132,17 @@ function (_React$Component) {
           key: company.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 33
           },
           __self: this
         }, __jsx("p", {
           className: activeCompany.name == company.fields.name || activeCompanyIndex == index ? "clickable companies-wrapper-item companies-wrapper-item--active" : "clickable companies-wrapper-item",
           onClick: function onClick() {
-            setActiveCompany(company.fields);
+            setActiveCompany(company.fields, index);
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 34
           },
           __self: this
         }, company.fields.name));
@@ -10699,12 +10687,14 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "state", {
-      activeCompany: {}
+      activeCompany: {},
+      activeCompanyIndex: 0
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "setActiveCompany", function (company) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "setActiveCompany", function (company, index) {
       _this.setState({
-        activeCompany: company
+        activeCompany: company,
+        activeCompanyIndex: index
       });
     });
 
@@ -10718,7 +10708,9 @@ function (_React$Component) {
           team = _this$props.team,
           companies = _this$props.companies,
           activePartner = _this$props.activePartner;
-      var activeCompany = this.state.activeCompany;
+      var _this$state = this.state,
+          activeCompany = _this$state.activeCompany,
+          activeCompanyIndex = _this$state.activeCompanyIndex;
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
@@ -10738,6 +10730,7 @@ function (_React$Component) {
         companies: companies,
         activeCompany: activeCompany,
         setActiveCompany: this.setActiveCompany,
+        activeCompanyIndex: activeCompanyIndex,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42

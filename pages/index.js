@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Companies from '../components/Companies'
 
 class Index extends React.Component {
-  state = { activeCompany: {} }
+  state = { activeCompany: {}, activeCompanyIndex: 0 }
 
   static async getInitialProps({ query }) {
 
@@ -26,20 +26,20 @@ class Index extends React.Component {
     }
   }
 
-  setActiveCompany = (company) => {
-    this.setState({ activeCompany: company })
+  setActiveCompany = (company, index) => {
+    this.setState({ activeCompany: company, activeCompanyIndex: index })
   }
 
   render() {
     const { team, companies, activePartner } = this.props
-    const { activeCompany } = this.state
+    const { activeCompany, activeCompanyIndex } = this.state
 
     return (
       <div>
         <Layout team={team} companies={companies} activePartner={activePartner} >
         {
           companies &&
-          <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} />
+          <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
         }
         </Layout>
       </div>
