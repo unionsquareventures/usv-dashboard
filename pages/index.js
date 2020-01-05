@@ -31,6 +31,16 @@ class Index extends React.Component {
     this.setState({ activeCompany: company, activeCompanyIndex: index })
   }
 
+  reset = async () => {
+    const { companies } = this.props
+
+    try {
+      this.setState({ activeCompany: companies[0], activeCompanyIndex: 0 })
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   render() {
     const { team, companies, activePartner, loggedInUser, login } = this.props
     const { activeCompany, activeCompanyIndex } = this.state
@@ -50,7 +60,7 @@ class Index extends React.Component {
     } else {
       return (
         <div>
-          <Layout team={team}>
+          <Layout team={team} reset={this.reset} >
             {
               companies &&
               <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />

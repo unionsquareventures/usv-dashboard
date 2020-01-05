@@ -219,41 +219,41 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import Companies from './Companies'
 
- // import AdditionalCompanyInfo from './AdditionalCompanyInfo'
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var team = _ref.team,
       companies = _ref.companies,
       activePartner = _ref.activePartner,
+      reset = _ref.reset,
       children = _ref.children;
   return __jsx("div", {
     className: "columns",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 6
     },
     __self: this
   }, __jsx("div", {
     className: "column column-sml",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 7
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 8
     },
     __self: this
   }, __jsx("a", {
+    onClick: reset,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 9
     },
     __self: this
   }, __jsx("img", {
@@ -261,20 +261,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     src: "https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 9
     },
     __self: this
   }))), __jsx("div", {
     className: "nav-links-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 12
     },
     __self: this
   }, __jsx("a", {
@@ -283,13 +283,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_cashviews",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 12
     },
     __self: this
   }, "Cash Views")), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 13
     },
     __self: this
   }, __jsx("a", {
@@ -298,21 +298,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_newdeals",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 13
     },
     __self: this
   }, "New Deals"))), __jsx(_Team__WEBPACK_IMPORTED_MODULE_1__["default"], {
     team: team,
+    reset: reset,
     activePartner: activePartner,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 15
     },
     __self: this
   }), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: this
   }, __jsx("a", {
@@ -321,14 +322,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_typeform",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: this
   }, "+ New Deal"))), __jsx("div", {
     className: "columns column inner-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 18
     },
     __self: this
   }, children));
@@ -374,6 +375,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       },
       __self: this
     }, __jsx("a", {
+      onClick: reset,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 7
@@ -10584,6 +10586,35 @@ function (_React$Component) {
       });
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "reset",
+    /*#__PURE__*/
+    Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var companies;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              companies = _this.props.companies;
+
+              try {
+                _this.setState({
+                  activeCompany: companies[0],
+                  activeCompanyIndex: 0
+                });
+              } catch (e) {
+                console.log(e);
+              }
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
     return _this;
   }
 
@@ -10604,7 +10635,7 @@ function (_React$Component) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 50
           },
           __self: this
         }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -10617,7 +10648,7 @@ function (_React$Component) {
           cookiePolicy: 'single_host_origin',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 51
           },
           __self: this
         }));
@@ -10625,14 +10656,15 @@ function (_React$Component) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 62
           },
           __self: this
         }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
           team: team,
+          reset: this.reset,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 63
           },
           __self: this
         }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -10642,27 +10674,27 @@ function (_React$Component) {
           activeCompanyIndex: activeCompanyIndex,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 66
           },
           __self: this
         }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_13__["default"], {
           url: activePartner ? "https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=".concat(activeCompany.notes_gdoc_heading_id) : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 68
           },
           __self: this
         }), __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 69
           },
           __self: this
         }, activeCompany.name && __jsx("div", {
           className: "column column-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 72
           },
           __self: this
         }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(function (ceo) {
@@ -10671,14 +10703,14 @@ function (_React$Component) {
             src: ceo.url,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 74
             },
             __self: this
           });
         }) : '', __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 76
           },
           __self: this
         }, __jsx("a", {
@@ -10687,7 +10719,7 @@ function (_React$Component) {
           target: "_blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 76
           },
           __self: this
         }, "One Pager"))))));
@@ -10698,17 +10730,17 @@ function (_React$Component) {
     value: function () {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
       /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(_ref2) {
         var query, name, resTeam, jsonTeam, resCompanies, jsonCompanies;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                query = _ref.query;
+                query = _ref2.query;
                 // http://localhost:3000/?q=rebecca
                 name = query.q ? query.q.toLowerCase() : ""; // fetch the team
 
-                _context.next = 4;
+                _context2.next = 4;
                 return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', {
                   headers: {
                     "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
@@ -10716,13 +10748,13 @@ function (_React$Component) {
                 });
 
               case 4:
-                resTeam = _context.sent;
-                _context.next = 7;
+                resTeam = _context2.sent;
+                _context2.next = 7;
                 return resTeam.json();
 
               case 7:
-                jsonTeam = _context.sent;
-                _context.next = 10;
+                jsonTeam = _context2.sent;
+                _context2.next = 10;
                 return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()("https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Organizations?filterByFormula=%7Bpartner_username%7D%3D'".concat(name, "'&view=USV+Portfolio+Companies"), {
                   headers: {
                     "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
@@ -10730,13 +10762,13 @@ function (_React$Component) {
                 });
 
               case 10:
-                resCompanies = _context.sent;
-                _context.next = 13;
+                resCompanies = _context2.sent;
+                _context2.next = 13;
                 return resCompanies.json();
 
               case 13:
-                jsonCompanies = _context.sent;
-                return _context.abrupt("return", {
+                jsonCompanies = _context2.sent;
+                return _context2.abrupt("return", {
                   team: jsonTeam.records,
                   companies: jsonCompanies.records.length > 0 ? jsonCompanies.records : null,
                   activePartner: name.length > 0 ? name : null
@@ -10744,10 +10776,10 @@ function (_React$Component) {
 
               case 15:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee);
+        }, _callee2);
       }));
 
       function getInitialProps(_x) {
@@ -10765,7 +10797,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -10788,5 +10820,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

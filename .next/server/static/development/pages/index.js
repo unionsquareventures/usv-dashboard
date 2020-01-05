@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -281,41 +281,41 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import Companies from './Companies'
 
- // import AdditionalCompanyInfo from './AdditionalCompanyInfo'
 
 
 /* harmony default export */ __webpack_exports__["default"] = (({
   team,
   companies,
   activePartner,
+  reset,
   children
 }) => __jsx("div", {
   className: "columns",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 6
   },
   __self: undefined
 }, __jsx("div", {
   className: "column column-sml",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 7
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
   href: "/",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 8
   },
   __self: undefined
 }, __jsx("a", {
+  onClick: reset,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 9
   },
   __self: undefined
 }, __jsx("img", {
@@ -323,20 +323,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   src: "https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 9
   },
   __self: undefined
 }))), __jsx("div", {
   className: "nav-links-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 13
+    lineNumber: 11
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14
+    lineNumber: 12
   },
   __self: undefined
 }, __jsx("a", {
@@ -345,13 +345,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_cashviews",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14
+    lineNumber: 12
   },
   __self: undefined
 }, "Cash Views")), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 13
   },
   __self: undefined
 }, __jsx("a", {
@@ -360,21 +360,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_newdeals",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 13
   },
   __self: undefined
 }, "New Deals"))), __jsx(_Team__WEBPACK_IMPORTED_MODULE_1__["default"], {
   team: team,
+  reset: reset,
   activePartner: activePartner,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 17
+    lineNumber: 15
   },
   __self: undefined
 }), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 16
   },
   __self: undefined
 }, __jsx("a", {
@@ -383,14 +384,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_typeform",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 16
   },
   __self: undefined
 }, "+ New Deal"))), __jsx("div", {
   className: "columns column inner-content",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 20
+    lineNumber: 18
   },
   __self: undefined
 }, children)));
@@ -434,6 +435,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   },
   __self: undefined
 }, __jsx("a", {
+  onClick: reset,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 7
@@ -2279,6 +2281,21 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         activeCompanyIndex: index
       });
     });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "reset", async () => {
+      const {
+        companies
+      } = this.props;
+
+      try {
+        this.setState({
+          activeCompany: companies[0],
+          activeCompanyIndex: 0
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    });
   }
 
   static async getInitialProps({
@@ -2325,7 +2342,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 50
         },
         __self: this
       }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -2336,7 +2353,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         cookiePolicy: 'single_host_origin',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 51
         },
         __self: this
       }));
@@ -2344,14 +2361,15 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 62
         },
         __self: this
       }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
         team: team,
+        reset: this.reset,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 63
         },
         __self: this
       }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2361,27 +2379,27 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         activeCompanyIndex: activeCompanyIndex,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 66
         },
         __self: this
       }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
         url: activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 68
         },
         __self: this
       }), __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 69
         },
         __self: this
       }, activeCompany.name && __jsx("div", {
         className: "column column-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 72
         },
         __self: this
       }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
@@ -2389,13 +2407,13 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         src: ceo.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 74
         },
         __self: this
       })) : '', __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 76
         },
         __self: this
       }, __jsx("a", {
@@ -2404,7 +2422,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 76
         },
         __self: this
       }, "One Pager"))))));
@@ -2417,7 +2435,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

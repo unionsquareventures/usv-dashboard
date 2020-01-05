@@ -15,6 +15,8 @@ To Dos:
 
  * when you first move to a partner needs to show their doc and the ceo faces, it doesn't because active company is not set to 0, related to two issues above
 
+ * persist authed session
+
 Done:
 
  * add link to "add a new deal" typeform
