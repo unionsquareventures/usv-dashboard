@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default ({ team, activePartner }) => (
+export default ({ team, activePartner, reset }) => (
   <div className="team-wrapper">
     {team.map(person => (
         <Link key={person.id} href={`/?q=${person.fields.name}`}>

@@ -1,12 +1,12 @@
 import fetch from 'isomorphic-fetch'
 import Layout from '../components/Layout'
 import Companies from '../components/Companies'
+import GoogleDoc from '../components/GoogleDoc'
 
 class Index extends React.Component {
   state = { activeCompany: {}, activeCompanyIndex: 0 }
 
   static async getInitialProps({ query }) {
-
     // http://localhost:3000/?q=rebecca
     const name = query.q ? query.q.toLowerCase() : ""
 
@@ -36,11 +36,23 @@ class Index extends React.Component {
 
     return (
       <div>
-        <Layout team={team} companies={companies} activePartner={activePartner} >
-        {
-          companies &&
-          <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
-        }
+        <Layout team={team}>
+          {
+            companies &&
+            <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
+          }
+          <GoogleDoc url={activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
+          <div>
+            {
+              activeCompany.name &&
+                <div className="column column-med">
+                  {
+                    activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                  }
+                  <p><a className="clickable" href={activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+                </div>
+            }
+          </div>
         </Layout>
       </div>
     )
@@ -49,13 +61,6 @@ class Index extends React.Component {
 
 export default Index
 
-// import Layout from '../components/Layout'
-// import Companies from '../components/Companies'
-// import GoogleDoc from '../components/GoogleDoc'
-//
-// import { getTeam } from '../utils/Airtable'
-// import { getPartnerCompanies } from '../utils/Airtable'
-//
 // class Index extends React.Component {
 //   constructor(props) {
 //     super(props)
@@ -73,17 +78,17 @@ export default Index
 //             <Companies activePartnerCompanies={this.props.activePartnerCompanies} activeCompany={this.props.activeCompany} changeActiveCompany={this.props.changeActiveCompany} />
 //           }
 //           <GoogleDoc url={this.props.activeCompany.name ? `https://docs.google.com/document/d/1tan4xBwhVVWcsIVdQpuOOhWDPn5MkO3arrspShOSCGk/edit#heading=${this.props.activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/12jQecxqh1oIdb2EcNm3qTAanjPJIEG0Zdf0vuusdfh0/edit"} />
-//           <div>
-//             {
-//               this.props.activeCompany.name &&
-//                 <div className="column column-med">
-//                   {
-//                     this.props.activeCompany.ceo_faces ? this.props.activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
-//                   }
-//                   <p><a href={this.props.activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
-//                 </div>
-//             }
-//           </div>
+          // <div>
+          //   {
+          //     this.props.activeCompany.name &&
+          //       <div className="column column-med">
+          //         {
+          //           this.props.activeCompany.ceo_faces ? this.props.activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+          //         }
+          //         <p><a href={this.props.activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+          //       </div>
+          //   }
+          // </div>
 //         </Layout>
 //       </div>
 //     )

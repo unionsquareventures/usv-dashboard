@@ -9,6 +9,12 @@ To Dos:
 
  * add google auth and then once that is added, switch to the real airtable and google docs
 
+ * on every route change, reset the dash: index.js this.setState({ activeCompany: {}, activeCompanyIndex: 0 })
+
+ * display partners and companies in a random order (do this in getinitialprops)
+
+ * when you first move to a partner needs to show their doc, it's because active company is not set to 0
+
 Done:
 
  * add link to "add a new deal" typeform

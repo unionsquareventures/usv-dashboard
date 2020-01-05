@@ -215,60 +215,7 @@ class Companies extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Companies); // /*
-// *
-// *  This component displays the list of companies per partner
-// *  And manages toggling between them with the arrows
-// *  In the constructor, it initiates an activeCompanyIndex which says which item in the array of that partner's companies is currently active
-// *  Then when the component mounts, it sets the active company in global state to the one at the 0th index of the array of that partner's companies
-// *  The activeCompanyIndex field in state is currently just used locally in this component to know which UI element should be displayed as active
-// *
-// */
-//
-// import React from 'react'
-//
-// class Companies extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = { activeCompanyIndex: 0 }
-//   }
-//   componentDidMount() {
-//     this.props.changeActiveCompany(this.props.activePartnerCompanies[this.state.activeCompanyIndex].fields)
-//   }
-//   incrementActiveCompany = () => {
-//     if (this.state.activeCompanyIndex <= this.props.activePartnerCompanies.length - 1) {
-//       this.setState({ activeCompanyIndex: this.state.activeCompanyIndex + 1 })
-//       this.props.changeActiveCompany(this.props.activePartnerCompanies[this.state.activeCompanyIndex].fields)
-//     }
-//   }
-//   decrementActiveCompany = () => {
-//     if (this.state.activeCompanyIndex > 0) {
-//       this.setState({ activeCompanyIndex: this.state.activeCompanyIndex -1 })
-//       this.props.changeActiveCompany(this.props.activePartnerCompanies[this.state.activeCompanyIndex].fields)
-//     }
-//   }
-//   render() {
-//     return (
-//       <div className="companies-wrapper">
-//         <div onClick={this.decrementActiveCompany}className="nav-arrow clickable"><i class="material-icons">navigate_before_rounded</i></div>
-//         <div onClick={this.incrementActiveCompany}className="nav-arrow clickable"><i class="material-icons">navigate_next_rounded</i></div>
-//         <div>
-//         {
-//           this.props.activePartnerCompanies.map((company, index) => {
-//             return (
-//               <div>
-//                 <p className={this.props.activeCompany.name == company.fields.name || this.props.activeCompanyIndex == index ? "clickable companies-wrapper-item companies-wrapper-item--active" : "clickable companies-wrapper-item"} onClick={() => {this.props.changeActiveCompany(company.fields)}}>{company.fields.name}</p>
-//               </div>
-//             )
-//           })
-//         }
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-//
-// export default Companies
+/* harmony default export */ __webpack_exports__["default"] = (Companies);
 
 /***/ }),
 
@@ -446,85 +393,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     lineNumber: 20
   },
   __self: undefined
-}, children))); //
-//   <div className="layout-wrapper">
-//
-//     { /* first column */ }
-//     <div className="column column-sml">
-//       { /* logo */ }
-//       <Link href="/">
-//         <a>
-//           <img id="logo" src="https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg" />
-//         </a>
-//       </Link>
-//
-//       <p className="menu-links"><a href="https://drive.google.com/drive/u/0/folders/0B1KsbxTl9h4lc1dUTm1CbVgxVHc" target="_cashviews">Cash Views</a></p>
-//       <p className="menu-links"><a href="https://airtable.com/tblp3neqOa0qqITHe/viw2A0exyNlw1STMf" target="_newdeals">New Deals</a></p>
-//
-//       <Team team={team} />
-//
-//       <p className="menu-links"><a href="https://nick207.typeform.com/to/J5fsGE" target="_typeform">+ New Deal</a></p>
-//     </div>
-//
-//     { /* optional second column for companies */ }
-//     <div className="column column-med">
-//       { activePartner && <Companies companies={companies}  /> }
-//     </div>
-//
-//     { /* third column */ }
-//     <div className="column">
-//       { activePartner && <GoogleDoc url={"https://docs.google.com/document/d/12jQecxqh1oIdb2EcNm3qTAanjPJIEG0Zdf0vuusdfh0/edit"}  /> }
-//       { !activePartner && <GoogleDoc url={"https://docs.google.com/document/d/12jQecxqh1oIdb2EcNm3qTAanjPJIEG0Zdf0vuusdfh0/edit"} /> }
-//     </div>
-//
-//     { /* optional fourth column for company info */ }
-//     <div className="column">
-//       { activePartner && <AdditionalCompanyInfo /> }
-//     </div>
-//   </div>
-// )
-// /*
-// *
-// *  This contains all of the parts of the UI that are consistent across views (main view vs partner view)
-// *  aka the team photos, the top logo and nav links
-// *  Then the other parts of the page from /pages/index.js are inserted where it says {this.props.children}
-// *
-// */
-//
-// import PeopleList from '../components/PeopleList'
-// import GoogleDoc from '../components/GoogleDoc'
-// import { getTeam } from '../utils/Airtable'
-//
-// class Layout extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       team: []
-//     }
-//   }
-//
-//   render() {
-//     const { router } = this.props
-//     return (
-//       <div className="columns">
-//         <div className="column column-sml">
-//           <img className="img-sml clickable" onClick={this.props.resetDashboard} src="https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg" />
-//           <div className="nav-links-container">
-//             <p><a className="clickable" href="https://drive.google.com/drive/u/0/folders/0B1KsbxTl9h4lc1dUTm1CbVgxVHc" target="_cashviews">Cash Views</a></p>
-//             <p><a className="clickable" href="https://airtable.com/tblp3neqOa0qqITHe/viw2A0exyNlw1STMf" target="_newdeals">New Deals</a></p>
-//           </div>
-//           <PeopleList team={this.state.team} activePartner={this.props.activePartner} changeActivePartner={this.props.changeActivePartner} />
-//           <p><a className="clickable" href="https://nick207.typeform.com/to/J5fsGE" target="_typeform">+ New Deal</a></p>
-//         </div>
-//         <div className="columns column inner-content">
-//           {this.props.children}
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-//
-// export default Layout
+}, children)));
 
 /***/ }),
 
@@ -547,7 +416,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /* harmony default export */ __webpack_exports__["default"] = (({
   team,
-  activePartner
+  activePartner,
+  reset
 }) => __jsx("div", {
   className: "team-wrapper",
   __source: {
@@ -2381,10 +2251,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_Companies__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Companies */ "./components/Companies.js");
+/* harmony import */ var _components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GoogleDoc */ "./components/GoogleDoc.js");
 
 var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -2451,8 +2323,6 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       __self: this
     }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
       team: team,
-      companies: companies,
-      activePartner: activePartner,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 39
@@ -2468,19 +2338,55 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         lineNumber: 42
       },
       __self: this
-    })));
+    }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      url: activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, activeCompany.name && __jsx("div", {
+      className: "column column-med",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
+      className: "img-sml circular margin-right-sml margin-bottom-sml flex-column",
+      src: ceo.url,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    })) : '', __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, __jsx("a", {
+      className: "clickable",
+      href: activeCompany.onepager_gdoc_url,
+      target: "_blank",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, "One Pager"))))));
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Index); // import Layout from '../components/Layout'
-// import Companies from '../components/Companies'
-// import GoogleDoc from '../components/GoogleDoc'
-//
-// import { getTeam } from '../utils/Airtable'
-// import { getPartnerCompanies } from '../utils/Airtable'
-//
-// class Index extends React.Component {
+/* harmony default export */ __webpack_exports__["default"] = (Index); // class Index extends React.Component {
 //   constructor(props) {
 //     super(props)
 //   }
@@ -2497,17 +2403,17 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 //             <Companies activePartnerCompanies={this.props.activePartnerCompanies} activeCompany={this.props.activeCompany} changeActiveCompany={this.props.changeActiveCompany} />
 //           }
 //           <GoogleDoc url={this.props.activeCompany.name ? `https://docs.google.com/document/d/1tan4xBwhVVWcsIVdQpuOOhWDPn5MkO3arrspShOSCGk/edit#heading=${this.props.activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/12jQecxqh1oIdb2EcNm3qTAanjPJIEG0Zdf0vuusdfh0/edit"} />
-//           <div>
-//             {
-//               this.props.activeCompany.name &&
-//                 <div className="column column-med">
-//                   {
-//                     this.props.activeCompany.ceo_faces ? this.props.activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
-//                   }
-//                   <p><a href={this.props.activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
-//                 </div>
-//             }
-//           </div>
+// <div>
+//   {
+//     this.props.activeCompany.name &&
+//       <div className="column column-med">
+//         {
+//           this.props.activeCompany.ceo_faces ? this.props.activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+//         }
+//         <p><a href={this.props.activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+//       </div>
+//   }
+// </div>
 //         </Layout>
 //       </div>
 //     )

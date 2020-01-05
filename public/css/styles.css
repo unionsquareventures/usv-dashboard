@@ -53,3 +53,8 @@
   width: 24px;
   color: black !important;
 }
+
+.inner-content, .inner-content .column {
+  margin-top: 0px;
+  padding-top: 0;
+}
