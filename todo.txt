@@ -13,7 +13,7 @@ To Dos:
 
  * display partners and companies in a random order (do this in getinitialprops)
 
- * when you first move to a partner needs to show their doc, it's because active company is not set to 0
+ * when you first move to a partner needs to show their doc and the ceo faces, it doesn't because active company is not set to 0, related to two issues above
 
 Done:
 

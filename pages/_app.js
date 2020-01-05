@@ -1,9 +1,19 @@
 import App from 'next/app'
 import Head from 'next/head'
 
+
 class USVDashboard extends App {
+  state = { loggedInUser: false }
+
+  login = (response) => {
+    if (response.profileObj.email.split("@")[1] === "usv.com") {
+      this.setState({ loggedInUser: true })
+    }
+  }
+
   render() {
     const { Component, pageProps } = this.props
+    const { loggedInUser } = this.state
     return (
       <div>
         <Head>
@@ -13,7 +23,7 @@ class USVDashboard extends App {
           <link rel="stylesheet" href="/css/utils.css" />
           <link rel="stylesheet" href="/css/styles.css" />
         </Head>
-        <Component {...pageProps} />
+        <Component {...pageProps} login={this.login} loggedInUser={loggedInUser} />
       </div>
     )
   }

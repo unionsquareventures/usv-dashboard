@@ -13,3 +13,5 @@ Putting feedback for replit here:
  * can you search across the files in the project directory? looks like you can search in individual files but not across all the files so it doesn't help you solve things like where do i reference this function or do a find and replace to rename something
 
  * if i navigate away from the replit tab and then back sometimes it takes a minute to load the file, actually it's kind of crazy maybe they are having some downtime. so maybe the takeaway is when they are offline you can't write code.
+
+ * i couldn't push from github back into their repl, i had to create a new repl and import from github there. the first time i tried to import from github it showed me all the files then suddenly most of the files disappeared. i was getting connection errors so i think they are having downtime. it spends so much time detecting langiage, that should happen in the background i just want to start writing code. my files keep disappearing! for whatever reason, random files and directories disappear from the left side bar this keeps happening when i import from github.

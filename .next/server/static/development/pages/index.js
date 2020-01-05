@@ -2252,10 +2252,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_Companies__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Companies */ "./components/Companies.js");
 /* harmony import */ var _components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GoogleDoc */ "./components/GoogleDoc.js");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-google-login */ "react-google-login");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_6__);
 
 var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -2309,118 +2312,108 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     const {
       team,
       companies,
-      activePartner
+      activePartner,
+      loggedInUser,
+      login
     } = this.props;
     const {
       activeCompany,
       activeCompanyIndex
     } = this.state;
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      team: team,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      companies: companies,
-      activeCompany: activeCompany,
-      setActiveCompany: this.setActiveCompany,
-      activeCompanyIndex: activeCompanyIndex,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      url: activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    }, activeCompany.name && __jsx("div", {
-      className: "column column-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
-      className: "img-sml circular margin-right-sml margin-bottom-sml flex-column",
-      src: ceo.url,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    })) : '', __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "clickable",
-      href: activeCompany.onepager_gdoc_url,
-      target: "_blank",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, "One Pager"))))));
+
+    if (!loggedInUser) {
+      return __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        clientId: "810380289272-v86e6hkvtaj7280do08emcma1bi79t3b.apps.googleusercontent.com",
+        buttonText: "Login",
+        onSuccess: login,
+        onFailure: res => console.log("login failed"),
+        cookiePolicy: 'single_host_origin',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }));
+    } else {
+      return __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        team: team,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        companies: companies,
+        activeCompany: activeCompany,
+        setActiveCompany: this.setActiveCompany,
+        activeCompanyIndex: activeCompanyIndex,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        url: activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }), __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, activeCompany.name && __jsx("div", {
+        className: "column column-med",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
+        className: "img-sml circular margin-right-sml margin-bottom-sml flex-column",
+        src: ceo.url,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      })) : '', __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, __jsx("a", {
+        className: "clickable",
+        href: activeCompany.onepager_gdoc_url,
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, "One Pager"))))));
+    }
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Index); // class Index extends React.Component {
-//   constructor(props) {
-//     super(props)
-//   }
-//   resetDashboard = () => {
-//     this.props.changeActiveCompany({})
-//     this.props.changeActivePartner('')
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <Layout>
-//           {
-//             this.props.activePartnerCompanies.length > 0 &&
-//             <Companies activePartnerCompanies={this.props.activePartnerCompanies} activeCompany={this.props.activeCompany} changeActiveCompany={this.props.changeActiveCompany} />
-//           }
-//           <GoogleDoc url={this.props.activeCompany.name ? `https://docs.google.com/document/d/1tan4xBwhVVWcsIVdQpuOOhWDPn5MkO3arrspShOSCGk/edit#heading=${this.props.activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/12jQecxqh1oIdb2EcNm3qTAanjPJIEG0Zdf0vuusdfh0/edit"} />
-// <div>
-//   {
-//     this.props.activeCompany.name &&
-//       <div className="column column-med">
-//         {
-//           this.props.activeCompany.ceo_faces ? this.props.activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
-//         }
-//         <p><a href={this.props.activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
-//       </div>
-//   }
-// </div>
-//         </Layout>
-//       </div>
-//     )
-//   }
-// }
-//
-// export default Index
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -2565,6 +2558,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-google-login":
+/*!*************************************!*\
+  !*** external "react-google-login" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-login");
 
 /***/ }),
 
