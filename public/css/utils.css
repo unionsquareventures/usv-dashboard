@@ -1,0 +1,103 @@
+/* this stylesheet is for reusable utiliy styles */
+
+
+/* defaults */
+html, body {
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+  height: -webkit-fill-available;
+  font-family: -apple-system, BlinkMacSystemFont;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* clickable / links / buttons */
+
+.clickable {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.clickable:hover {
+  filter: brightness(110%);
+}
+
+.clickable:active {
+  filter: brightness(120%);
+}
+
+/* columns */
+
+.columns {
+  display: flex;
+	flex-flow: row wrap;
+	justify-content: left;
+  height: -webkit-fill-available;
+  /* min-height: 1500px; */
+}
+
+.column {
+	flex: 1;
+	margin: 2px;
+	padding: 10px;
+  padding-top: 10px;
+}
+
+.column-sml {
+  max-width: 90px;
+}
+
+.column-med {
+  max-width: 300px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* sizing */
+
+.fill-available {
+  width: -webkit-fill-available;
+  min-height: 1000px; /* ugly hack */
+}
+
+/* image sizes */
+
+.img-xtra-sml {
+  height: 40px;
+  width: 40px;
+}
+
+.img-sml {
+  height: 65px;
+  width: 65px;
+}
+
+/* margin */
+
+.margin-right-sml {
+  margin-right: 15px;
+}
+
+.margin-bottom-sml {
+  margin-bottom: 15px;
+}
+
+/* padding */
+
+.padding-sml {
+  padding: 2px;
+}
+
+/* borders */
+
+.circular {
+  border-radius: 100px;
+  object-fit: cover;
+}

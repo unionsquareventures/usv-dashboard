@@ -1,0 +1,14 @@
+
+To Dos:
+
+ * fix next / previous buttons.  they don't always work, and if you manually click into an item in the list, they pick up in the wrong place.  the app needs to keep track of the index of the current company, and the next/prev needs increment/decrement the index.
+
+ * clicking on faces: currently requires a double click.
+
+ * add panel for one-pager for each company.  should this be an iframe or a link off? [it is currently a link we can definitely switch it to an iframe] Or some kind of expandable tab?  Related: we should load all of the google docs up front in separate iframes and then just switch between them, to make switching faster
+
+ * add google auth and then once that is added, switch to the real airtable and google docs
+
+Done:
+
+ * add link to "add a new deal" typeform
