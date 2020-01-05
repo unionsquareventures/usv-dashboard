@@ -1,20 +1,6 @@
 USV Dashboard
 =============
 
-# Note to Nick
-
-I have some buggy things to fix (but I am on it 😜):
-
-1. When you click on a partner, you need to click a second time for that partner to be selected.
-2. When you click the next arrow to advance companies, the first company does not advance immediately you need to click the arrow twice (probably the same programming mistake I am making for bug #1)
-3. Partners and companies are currently returned in the same order each time and need to be randomized
-
-## The plan for auth
-
-* The dashboard is hosted behind Cloudflare
-* We create a Cloudflare access rule that before you can reach the dashboard you must login with your google account and the email must end in @usv.com. 
-* We run the dashboard react app on a server on digitalocean or another host that gives you access to the server. On that server we lock access down to just [Cloudflare IPs](https://www.cloudflare.com/ips/).
-
 # Running This Project
 
 This is built with [Next.js](https://nextjs.org/learn) which is a react framework.
