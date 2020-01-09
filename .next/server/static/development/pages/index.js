@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Companies.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Companies.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -230,7 +230,7 @@ class Companies extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/GoogleDoc.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/GoogleDoc.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -278,7 +278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GoogleDoc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoogleDoc */ "./components/GoogleDoc.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Layout.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -291,31 +291,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   reset,
   children
 }) => __jsx("div", {
-  className: "columns",
+  className: "row",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 6
   },
   __self: undefined
 }, __jsx("div", {
-  className: "column column-sml",
+  className: "col-sm-1",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7
+    lineNumber: 8
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
   href: "/",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 9
   },
   __self: undefined
 }, __jsx("a", {
   onClick: reset,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 10
   },
   __self: undefined
 }, __jsx("img", {
@@ -323,20 +323,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   src: "https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 10
   },
   __self: undefined
 }))), __jsx("div", {
   className: "nav-links-container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 12
   },
   __self: undefined
 }, __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 13
   },
   __self: undefined
 }, __jsx("a", {
@@ -345,13 +345,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_cashviews",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 13
   },
   __self: undefined
 }, "Cash Views")), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 13
+    lineNumber: 14
   },
   __self: undefined
 }, __jsx("a", {
@@ -360,7 +360,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_newdeals",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 13
+    lineNumber: 14
   },
   __self: undefined
 }, "New Deals"))), __jsx(_Team__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -369,13 +369,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   activePartner: activePartner,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 16
   },
   __self: undefined
 }), __jsx("p", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 17
   },
   __self: undefined
 }, __jsx("a", {
@@ -384,14 +384,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   target: "_typeform",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 16
+    lineNumber: 17
   },
   __self: undefined
 }, "+ New Deal"))), __jsx("div", {
-  className: "columns column inner-content",
+  className: "col-sm-11",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 18
+    lineNumber: 20
   },
   __self: undefined
 }, children)));
@@ -411,7 +411,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Team.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Team.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -2257,7 +2257,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-google-login */ "react-google-login");
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_6__);
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/index.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -2302,18 +2302,18 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     query
   }) {
     // http://localhost:3000/?q=rebecca
-    const name = query.q ? query.q.toLowerCase() : ""; // fetch the team
+    const name = query.q ? query.q : ""; // fetch the team
 
     const resTeam = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default()('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', {
       headers: {
-        "Authorization": `Bearer ${"keyVM2c7uN5IJ1gn3"}`
+        "Authorization": `Bearer ${"keyb2gigIEYanSFai"}`
       }
     });
     const jsonTeam = await resTeam.json(); // fetch the partner's companies
 
-    const resCompanies = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default()(`https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Organizations?filterByFormula=%7Bpartner_username%7D%3D'${name}'&view=USV+Portfolio+Companies`, {
+    const resCompanies = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default()(`https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7Bpartner%7D%3D'${name}'`, {
       headers: {
-        "Authorization": `Bearer ${"keyVM2c7uN5IJ1gn3"}`
+        "Authorization": `Bearer ${"keyb2gigIEYanSFai"}`
       }
     });
     const jsonCompanies = await resCompanies.json(); // return as props
@@ -2358,18 +2358,26 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         __self: this
       }));
     } else {
-      return __jsx("div", {
+      return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        team: team,
+        reset: this.reset,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 62
         },
         __self: this
-      }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        team: team,
-        reset: this.reset,
+      }, __jsx("div", {
+        class: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 63
+        },
+        __self: this
+      }, __jsx("div", {
+        class: "col-sm-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
         },
         __self: this
       }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2379,27 +2387,91 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         activeCompanyIndex: activeCompanyIndex,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 67
         },
         __self: this
-      }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        url: activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+      })), __jsx("div", {
+        class: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 71
         },
         __self: this
-      }), __jsx("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: this
-      }, activeCompany.name && __jsx("div", {
-        className: "column column-med",
+      }, __jsx("div", {
+        class: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 72
+        },
+        __self: this
+      }, __jsx("div", {
+        class: "col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, __jsx("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74
+        },
+        __self: this
+      }, activeCompany.name), __jsx("table", {
+        class: "table",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: this
+      }, __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, "Cash on Hand"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: this
+      }, "$", activeCompany.cash_on_hand)), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81
+        },
+        __self: this
+      }, "Burn or Earnings"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, "$", activeCompany.burn_or_earnings)))), __jsx("div", {
+        class: "col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      }, activeCompany.name && __jsx("div", {
+        className: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
         },
         __self: this
       }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
@@ -2407,13 +2479,13 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         src: ceo.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 91
         },
         __self: this
       })) : '', __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 93
         },
         __self: this
       }, __jsx("a", {
@@ -2422,10 +2494,31 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 93
         },
         __self: this
-      }, "One Pager"))))));
+      }, "One Pager"))))), __jsx("div", {
+        class: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      }, __jsx("div", {
+        class: "col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }), __jsx("div", {
+        class: "col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      })))));
     }
   }
 
@@ -2442,7 +2535,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danigrant/Projects/usv-dashboard/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/nickgrossman/dev/usv/usv-dashboard-2/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

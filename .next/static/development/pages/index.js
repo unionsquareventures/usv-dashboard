@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Companies.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Companies.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
@@ -168,7 +168,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/GoogleDoc.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/GoogleDoc.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -216,7 +216,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GoogleDoc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoogleDoc */ "./components/GoogleDoc.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Layout.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -229,31 +229,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       reset = _ref.reset,
       children = _ref.children;
   return __jsx("div", {
-    className: "columns",
+    className: "row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: this
   }, __jsx("div", {
-    className: "column column-sml",
+    className: "col-sm-1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, __jsx("a", {
     onClick: reset,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
   }, __jsx("img", {
@@ -261,20 +261,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     src: "https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
   }))), __jsx("div", {
     className: "nav-links-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }, __jsx("a", {
@@ -283,13 +283,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_cashviews",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }, "Cash Views")), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, __jsx("a", {
@@ -298,7 +298,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_newdeals",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, "New Deals"))), __jsx(_Team__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -307,13 +307,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     activePartner: activePartner,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   }), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }, __jsx("a", {
@@ -322,14 +322,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_typeform",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }, "+ New Deal"))), __jsx("div", {
-    className: "columns column inner-content",
+    className: "col-sm-11",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
   }, children));
@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Team.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Team.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -5368,10 +5368,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js!./":
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js ***!
-  \*******************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js!./":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js ***!
+  \*************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10547,7 +10547,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/index.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 
@@ -10653,18 +10653,26 @@ function (_React$Component) {
           __self: this
         }));
       } else {
-        return __jsx("div", {
+        return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          team: team,
+          reset: this.reset,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 62
           },
           __self: this
-        }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
-          team: team,
-          reset: this.reset,
+        }, __jsx("div", {
+          "class": "row",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 63
+          },
+          __self: this
+        }, __jsx("div", {
+          "class": "col-sm-2",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64
           },
           __self: this
         }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -10674,27 +10682,91 @@ function (_React$Component) {
           activeCompanyIndex: activeCompanyIndex,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 67
           },
           __self: this
-        }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_13__["default"], {
-          url: activePartner ? "https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=".concat(activeCompany.notes_gdoc_heading_id) : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+        })), __jsx("div", {
+          "class": "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 71
           },
           __self: this
-        }), __jsx("div", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 69
-          },
-          __self: this
-        }, activeCompany.name && __jsx("div", {
-          className: "column column-med",
+        }, __jsx("div", {
+          "class": "row",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 72
+          },
+          __self: this
+        }, __jsx("div", {
+          "class": "col-sm-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73
+          },
+          __self: this
+        }, __jsx("h2", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: this
+        }, activeCompany.name), __jsx("table", {
+          "class": "table",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75
+          },
+          __self: this
+        }, __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77
+          },
+          __self: this
+        }, "Cash on Hand"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        }, "$", activeCompany.cash_on_hand)), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81
+          },
+          __self: this
+        }, "Burn or Earnings"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82
+          },
+          __self: this
+        }, "$", activeCompany.burn_or_earnings)))), __jsx("div", {
+          "class": "col-sm-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          },
+          __self: this
+        }, activeCompany.name && __jsx("div", {
+          className: "",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 89
           },
           __self: this
         }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(function (ceo) {
@@ -10703,14 +10775,14 @@ function (_React$Component) {
             src: ceo.url,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74
+              lineNumber: 91
             },
             __self: this
           });
         }) : '', __jsx("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 93
           },
           __self: this
         }, __jsx("a", {
@@ -10719,10 +10791,31 @@ function (_React$Component) {
           target: "_blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 93
           },
           __self: this
-        }, "One Pager"))))));
+        }, "One Pager"))))), __jsx("div", {
+          "class": "row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          },
+          __self: this
+        }, __jsx("div", {
+          "class": "col-sm-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99
+          },
+          __self: this
+        }), __jsx("div", {
+          "class": "col-sm-6",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102
+          },
+          __self: this
+        })))));
       }
     }
   }], [{
@@ -10738,12 +10831,12 @@ function (_React$Component) {
               case 0:
                 query = _ref2.query;
                 // http://localhost:3000/?q=rebecca
-                name = query.q ? query.q.toLowerCase() : ""; // fetch the team
+                name = query.q ? query.q : ""; // fetch the team
 
                 _context2.next = 4;
                 return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', {
                   headers: {
-                    "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
+                    "Authorization": "Bearer ".concat("keyb2gigIEYanSFai")
                   }
                 });
 
@@ -10755,9 +10848,9 @@ function (_React$Component) {
               case 7:
                 jsonTeam = _context2.sent;
                 _context2.next = 10;
-                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()("https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Organizations?filterByFormula=%7Bpartner_username%7D%3D'".concat(name, "'&view=USV+Portfolio+Companies"), {
+                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()("https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7Bpartner%7D%3D'".concat(name, "'"), {
                   headers: {
-                    "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
+                    "Authorization": "Bearer ".concat("keyb2gigIEYanSFai")
                   }
                 });
 
@@ -10798,13 +10891,13 @@ function (_React$Component) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************/
+/*!*****************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js!./");
 
 
 /***/ }),

@@ -9,14 +9,14 @@ class Index extends React.Component {
 
   static async getInitialProps({ query }) {
     // http://localhost:3000/?q=rebecca
-    const name = query.q ? query.q.toLowerCase() : ""
+    const name = query.q ? query.q : ""
 
     // fetch the team
     const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonTeam = await resTeam.json()
 
     // fetch the partner's companies
-    const resCompanies = await fetch(`https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Organizations?filterByFormula=%7Bpartner_username%7D%3D'${name}'&view=USV+Portfolio+Companies`, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
+    const resCompanies = await fetch(`https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7Bpartner%7D%3D'${name}'`, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
     // return as props
@@ -59,26 +59,54 @@ class Index extends React.Component {
       )
     } else {
       return (
-        <div>
           <Layout team={team} reset={this.reset} >
-            {
-              companies &&
-              <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
-            }
-            <GoogleDoc url={activePartner ? `https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=${activeCompany.notes_gdoc_heading_id}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
-            <div>
-              {
-                activeCompany.name &&
-                  <div className="column column-med">
-                    {
-                      activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
-                    }
-                    <p><a className="clickable" href={activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+            <div class="row">
+                <div class="col-sm-2">
+                  {
+                    companies &&
+                    <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
+                  }
+                </div>
+              {/*<GoogleDoc url={activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />*/}
+              <div class="col-sm-10">
+                 <div class="row">
+                    <div class="col-sm-6">
+                      <h2>{activeCompany.name}</h2>
+                      <table class="table">
+                        <tr>
+                          <th>Cash on Hand</th>
+                          <td>${activeCompany.cash_on_hand}</td>
+                        </tr>
+                        <tr>
+                          <th>Burn or Earnings</th>
+                          <td>${activeCompany.burn_or_earnings}</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col-sm-6">
+                      {
+                        activeCompany.name &&
+                          <div className="">
+                            {
+                              activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                            }
+                            <p><a className="clickable" href={activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+                          </div>
+                      }
+                    </div>
                   </div>
-              }
+                  <div class="row">
+                    <div class="col-sm-6">
+                    
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                  </div>
+
+              </div>
             </div>
           </Layout>
-        </div>
       )
     }
   }

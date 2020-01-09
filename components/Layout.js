@@ -3,8 +3,9 @@ import GoogleDoc from './GoogleDoc'
 import Link from 'next/link'
 
 export default ({ team, companies, activePartner, reset, children }) => (
-  <div className="columns">
-    <div className="column column-sml">
+  <div className="row">
+
+    <div className="col-sm-1">
       <Link href="/" >
         <a onClick={reset}><img className="img-sml clickable" src="https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg" /></a>
       </Link>
@@ -15,7 +16,8 @@ export default ({ team, companies, activePartner, reset, children }) => (
       <Team team={team} reset={reset} activePartner={activePartner} />
       <p><a className="clickable" href="https://nick207.typeform.com/to/J5fsGE" target="_typeform">+ New Deal</a></p>
     </div>
-    <div className="columns column inner-content">
+
+    <div className="col-sm-11">
       {children}
     </div>
   </div>
