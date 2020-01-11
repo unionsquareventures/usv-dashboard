@@ -62,6 +62,13 @@ class Index extends React.Component {
     return "(" + fmt_num + "x)"
   }
 
+  fundsFormat = (funds) => {
+    if (typeof funds == "undefined") {
+      return ""
+    }
+    return Object.keys(funds).map(function(k){return funds[k]}).join(", ");
+  }
+
 
   setActiveCompany = (company, index) => {
     this.setState({ activeCompany: company, activeCompanyIndex: index })
@@ -134,6 +141,10 @@ class Index extends React.Component {
                         <tr>
                             <th>USV Ownership</th>
                             <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
+                          </tr>
+                        <tr>
+                            <th>Funds</th>
+                            <td>{this.fundsFormat(activeCompany.funds)}</td>
                           </tr>
                         <tr>
                             <th>Cumulative USV Investment</th>
