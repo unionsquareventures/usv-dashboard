@@ -12,7 +12,7 @@ class Index extends React.Component {
     const name = query.q ? query.q : ""
 
     // fetch the team
-    const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
+    const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonTeam = await resTeam.json()
 
     // fetch the partner's companies
@@ -25,6 +25,16 @@ class Index extends React.Component {
       companies: jsonCompanies.records.length > 0 ? jsonCompanies.records : null,
       activePartner: name.length > 0 ? name : null
     }
+  }
+
+  accountingFormatMillions = (number) => {
+    var fmt_num = parseFloat(number)
+    if (number<0) {
+      fmt_num = "($" + (number * -1) + "mm)"
+    } else {
+      fmt_num = "$" + number + "mm"
+    }
+    return fmt_num
   }
 
   setActiveCompany = (company, index) => {
@@ -71,15 +81,22 @@ class Index extends React.Component {
               <div class="col-sm-10">
                  <div class="row">
                     <div class="col-sm-6">
-                      <h2>{activeCompany.name}</h2>
+                      <div class="clearfix">
+                      <h2 class="company-name">{activeCompany.name}</h2>
+                        <div class="ceo-faces">
+                          {
+                              activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                            }
+                          </div>
+                      </div>
                       <table class="table">
                         <tr>
                           <th>Cash on Hand</th>
-                          <td>${activeCompany.cash_on_hand}</td>
+                          <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
                         </tr>
                         <tr>
                           <th>Burn or Earnings</th>
-                          <td>${activeCompany.burn_or_earnings}</td>
+                          <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                         </tr>
                       </table>
                     </div>
@@ -88,9 +105,9 @@ class Index extends React.Component {
                         activeCompany.name &&
                           <div className="">
                             {
-                              activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                              activeCompany.screenshot_web ? activeCompany.screenshot_web.map(screenshot => <img className="screenshot" src={screenshot.url} /> ) : ''
                             }
-                            <p><a className="clickable" href={activeCompany.onepager_gdoc_url} target="_blank">One Pager</a></p>
+                            <p><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></p>
                           </div>
                       }
                     </div>

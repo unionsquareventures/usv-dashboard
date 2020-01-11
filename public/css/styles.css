@@ -1,5 +1,14 @@
 /* this stylesheet is for one-off specific component styles */
 
+#logo {
+  margin-bottom: 15px;
+}
+#nav ul {
+  padding: 0;
+}
+#nav li {
+  display: block;
+}
 .team-wrapper {
   display: flex;
   align-items: flex-start;
@@ -7,14 +16,26 @@
   flex-flow: row wrap;
   width: 100px;
 }
+.team-wrapper img {
+  border-radius: 50px;
+}
 
+h2.company-name {
+  float: left;
+}
+.ceo-faces {
+  float: right;
+}
 .person-avatar--active {
   box-shadow: inset 0px 0px 0px 10px #509d5d;
   border-radius: 50px;
 }
 
 .screenshot {
-  max-width: 300px;
+  width: 100%;
+  border: 6px solid #ccc;
+  border-top: 25px solid #ccc;
+  border-radius: 5px;
 }
 
 .companies-wrapper {
@@ -22,14 +43,22 @@
 }
 
 .companies-wrapper-item {
-  padding: 8px;
+  padding: 4px 8px;
   margin: 0 0 5px;
 }
 
 .companies-wrapper-item--active {
-  background: #509d5d;
+  background: #509d5d !important;
   color: white !important;
   border-radius: 5px;
+}
+.companies-wrapper-item:hover {
+  background: #ddd;
+  color: black;
+  border-radius: 5px;
+}
+.company p {
+  margin: 0;
 }
 
 .nav-arrow {
@@ -37,7 +66,6 @@
   background: #cfcfcf;
   width: 30px;
   height: 30px;
-  margin-top: 15px;
   margin-right: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
