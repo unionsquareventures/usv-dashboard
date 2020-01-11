@@ -92,10 +92,9 @@ tr.section-header {
 }
 tr.section-header th,
 tr.section-header td {
-  padding: 6px 12px;
-}
-tr.section-header th {
+  padding: 6px 12px 6px;
   font-weight: normal;
   text-transform: uppercase;
   font-size:80%;
+  color: #444;
 }

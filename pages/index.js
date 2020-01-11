@@ -47,9 +47,21 @@ class Index extends React.Component {
   }
 
   percentFormat = (number) => {
+    if (isNaN(number)) {
+      return ""
+    }
     var fmt_num = parseFloat(number * 100).toFixed(2)
     return fmt_num + "%"
   }
+
+  multipleFormat = (number) => {
+    if (isNaN(number)) {
+      return ""
+    }
+    var fmt_num = parseFloat(number).toFixed(1)
+    return "(" + fmt_num + "x)"
+  }
+
 
   setActiveCompany = (company, index) => {
     this.setState({ activeCompany: company, activeCompanyIndex: index })
@@ -105,7 +117,7 @@ class Index extends React.Component {
                       <table class="table">
                        <tr class="section-header">
                             <th>Metrics</th>
-                            <td></td>
+                            <td>as of {activeCompany.latest_metrics_date}</td>
                           </tr>
                         <tr>
                           <th>Cash on Hand</th>
@@ -117,7 +129,7 @@ class Index extends React.Component {
                         </tr>
                           <tr class="section-header">
                             <th>Ownership</th>
-                            <td></td>
+                            <td>as of {activeCompany.latest_valuation_date}</td>
                           </tr>
                         <tr>
                             <th>USV Ownership</th>
@@ -129,7 +141,9 @@ class Index extends React.Component {
                           </tr>
                           <tr>
                             <th>Cumulative Carrying Value</th>
-                            <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)}</td>
+                            <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)}
+                             &nbsp;{this.multipleFormat(activeCompany.multiple)}
+                            </td>
                           </tr>
                           <tr>
                             <th>Estimated Enterprise Value</th>
