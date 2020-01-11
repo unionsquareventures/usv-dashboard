@@ -28,13 +28,27 @@ class Index extends React.Component {
   }
 
   accountingFormatMillions = (number) => {
-    var fmt_num = parseFloat(number)
+    if (isNaN(number)) {
+      return ""
+    }
+    var fmt_num = parseFloat(number).toFixed(1)
     if (number<0) {
-      fmt_num = "($" + (number * -1) + "mm)"
+      fmt_num = "($" + (fmt_num * -1) + "mm)"
     } else {
-      fmt_num = "$" + number + "mm"
+      if (number>1000) {
+        fmt_num = fmt_num / 1000
+        fmt_num = fmt_num.toFixed(2)
+        fmt_num = "$" + fmt_num + "B"
+      } else {
+        fmt_num = "$" + fmt_num + "mm"
+      }
     }
     return fmt_num
+  }
+
+  percentFormat = (number) => {
+    var fmt_num = parseFloat(number * 100).toFixed(2)
+    return fmt_num + "%"
   }
 
   setActiveCompany = (company, index) => {
@@ -77,10 +91,9 @@ class Index extends React.Component {
                     <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
                   }
                 </div>
-              {/*<GoogleDoc url={activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />*/}
               <div class="col-sm-10">
                  <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                       <div class="clearfix">
                       <h2 class="company-name">{activeCompany.name}</h2>
                         <div class="ceo-faces">
@@ -90,6 +103,10 @@ class Index extends React.Component {
                           </div>
                       </div>
                       <table class="table">
+                       <tr class="section-header">
+                            <th>Metrics</th>
+                            <td></td>
+                          </tr>
                         <tr>
                           <th>Cash on Hand</th>
                           <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
@@ -98,26 +115,34 @@ class Index extends React.Component {
                           <th>Burn or Earnings</th>
                           <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                         </tr>
+                          <tr class="section-header">
+                            <th>Ownership</th>
+                            <td></td>
+                          </tr>
+                        <tr>
+                            <th>USV Ownership</th>
+                            <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
+                          </tr>
+                        <tr>
+                            <th>Cumulative USV Investment</th>
+                            <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
+                          </tr>
+                          <tr>
+                            <th>Cumulative Carrying Value</th>
+                            <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)}</td>
+                          </tr>
+                          <tr>
+                            <th>Estimated Enterprise Value</th>
+                            <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
+                          </tr>
+                          <tr>
+                            <th></th>
+                            <td><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></td>
+                          </tr>
                       </table>
                     </div>
-                    <div class="col-sm-6">
-                      {
-                        activeCompany.name &&
-                          <div className="">
-                            {
-                              activeCompany.screenshot_web ? activeCompany.screenshot_web.map(screenshot => <img className="screenshot" src={screenshot.url} /> ) : ''
-                            }
-                            <p><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></p>
-                          </div>
-                      }
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                    
-                    </div>
-                    <div class="col-sm-6">
-
+                    <div class="col-sm-7">
+                      <GoogleDoc url={activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                     </div>
                   </div>
 

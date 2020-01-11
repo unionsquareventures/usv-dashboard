@@ -251,6 +251,7 @@ const GoogleDoc = props => {
     className: "fill-available",
     src: props.url,
     frameBorder: "0",
+    height: "300",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -2281,15 +2282,31 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "accountingFormatMillions", number => {
-      var fmt_num = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_0___default()(number);
+      if (isNaN(number)) {
+        return "";
+      }
+
+      var fmt_num = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_0___default()(number).toFixed(1);
 
       if (number < 0) {
-        fmt_num = "($" + number * -1 + "mm)";
+        fmt_num = "($" + fmt_num * -1 + "mm)";
       } else {
-        fmt_num = "$" + number + "mm";
+        if (number > 1000) {
+          fmt_num = fmt_num / 1000;
+          fmt_num = fmt_num.toFixed(2);
+          fmt_num = "$" + fmt_num + "B";
+        } else {
+          fmt_num = "$" + fmt_num + "mm";
+        }
       }
 
       return fmt_num;
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "percentFormat", number => {
+      var fmt_num = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_0___default()(number * 100).toFixed(2);
+
+      return fmt_num + "%";
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "setActiveCompany", (company, index) => {
@@ -2359,7 +2376,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 74
         },
         __self: this
       }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -2370,7 +2387,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         cookiePolicy: 'single_host_origin',
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 75
         },
         __self: this
       }));
@@ -2380,21 +2397,21 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         reset: this.reset,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 86
         },
         __self: this
       }, __jsx("div", {
         class: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 87
         },
         __self: this
       }, __jsx("div", {
         class: "col-sm-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 88
         },
         __self: this
       }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2404,49 +2421,49 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         activeCompanyIndex: activeCompanyIndex,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 91
         },
         __self: this
       })), __jsx("div", {
         class: "col-sm-10",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 94
         },
         __self: this
       }, __jsx("div", {
         class: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 95
         },
         __self: this
       }, __jsx("div", {
-        class: "col-sm-6",
+        class: "col-sm-5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 96
         },
         __self: this
       }, __jsx("div", {
         class: "clearfix",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 97
         },
         __self: this
       }, __jsx("h2", {
         class: "company-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 98
         },
         __self: this
       }, activeCompany.name), __jsx("div", {
         class: "ceo-faces",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 99
         },
         __self: this
       }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => __jsx("img", {
@@ -2454,78 +2471,178 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         src: ceo.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 101
         },
         __self: this
       })) : '')), __jsx("table", {
         class: "table",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 105
         },
         __self: this
       }, __jsx("tr", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93
-        },
-        __self: this
-      }, __jsx("th", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94
-        },
-        __self: this
-      }, "Cash on Hand"), __jsx("td", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95
-        },
-        __self: this
-      }, this.accountingFormatMillions(activeCompany.cash_on_hand))), __jsx("tr", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
-        },
-        __self: this
-      }, __jsx("th", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 98
-        },
-        __self: this
-      }, "Burn or Earnings"), __jsx("td", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 99
-        },
-        __self: this
-      }, this.accountingFormatMillions(activeCompany.burn_or_earnings))))), __jsx("div", {
-        class: "col-sm-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103
-        },
-        __self: this
-      }, activeCompany.name && __jsx("div", {
-        className: "",
+        class: "section-header",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 106
         },
         __self: this
-      }, activeCompany.screenshot_web ? activeCompany.screenshot_web.map(screenshot => __jsx("img", {
-        className: "screenshot",
-        src: screenshot.url,
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }, "Metrics"), __jsx("td", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 108
         },
         __self: this
-      })) : '', __jsx("p", {
+      })), __jsx("tr", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 110
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, "Cash on Hand"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      }, this.accountingFormatMillions(activeCompany.cash_on_hand))), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }, "Burn or Earnings"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }, this.accountingFormatMillions(activeCompany.burn_or_earnings))), __jsx("tr", {
+        class: "section-header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }, "Ownership"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      })), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123
+        },
+        __self: this
+      }, "USV Ownership"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }, this.percentFormat(activeCompany.percent_ownership))), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
+        },
+        __self: this
+      }, "Cumulative USV Investment"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, this.accountingFormatMillions(activeCompany.cumulative_usv_investment))), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131
+        },
+        __self: this
+      }, "Cumulative Carrying Value"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }, this.accountingFormatMillions(activeCompany.cumulative_carrying_value))), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 134
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 135
+        },
+        __self: this
+      }, "Estimated Enterprise Value"), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136
+        },
+        __self: this
+      }, this.accountingFormatMillions(activeCompany.estimated_enterprise_value))), __jsx("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
         },
         __self: this
       }, __jsx("a", {
@@ -2534,31 +2651,24 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 140
         },
         __self: this
       }, "One Pager"))))), __jsx("div", {
-        class: "row",
+        class: "col-sm-7",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 144
         },
         __self: this
-      }, __jsx("div", {
-        class: "col-sm-6",
+      }, __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        url: activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 145
         },
         __self: this
-      }), __jsx("div", {
-        class: "col-sm-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 119
-        },
-        __self: this
-      })))));
+      }))))));
     }
   }
 
