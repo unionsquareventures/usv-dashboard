@@ -7737,7 +7737,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/_app.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_16___default.a.createElement;
 
@@ -7767,7 +7767,7 @@ function (_App) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_11__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_12__["default"])(USVDashboard)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "state", {
-      loggedInUser: false
+      loggedInUser: true
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_15__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_13__["default"])(_this), "login", function (response) {
@@ -7825,7 +7825,9 @@ function (_App) {
         __self: this
       }), __jsx("link", {
         rel: "stylesheet",
-        href: "/css/utils.css",
+        href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+        integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
+        crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23
@@ -7833,21 +7835,36 @@ function (_App) {
         __self: this
       }), __jsx("link", {
         rel: "stylesheet",
-        href: "/css/styles.css",
+        href: "/css/utils.css",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 24
         },
         __self: this
-      })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_8__["default"])({}, pageProps, {
+      }), __jsx("link", {
+        rel: "stylesheet",
+        href: "/css/styles.css",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      })), __jsx("div", {
+        "class": "container-fluid",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_8__["default"])({}, pageProps, {
         login: this.login,
         loggedInUser: loggedInUser,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
-      })));
+      }))));
     }
   }]);
 

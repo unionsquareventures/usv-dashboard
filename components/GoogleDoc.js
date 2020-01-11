@@ -7,7 +7,7 @@
 const GoogleDoc = props => {
   return (
     <div className="column">
-      <iframe className="fill-available" src={props.url} frameBorder="0"></iframe>
+      <iframe className="fill-available" src={props.url} frameBorder="0" height="300"></iframe>
     </div>
   )
 }

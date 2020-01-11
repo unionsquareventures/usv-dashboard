@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Companies.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Companies.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
@@ -168,7 +168,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/GoogleDoc.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/GoogleDoc.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -189,6 +189,7 @@ var GoogleDoc = function GoogleDoc(props) {
     className: "fill-available",
     src: props.url,
     frameBorder: "0",
+    height: "300",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -216,7 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GoogleDoc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GoogleDoc */ "./components/GoogleDoc.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Layout.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -229,14 +230,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       reset = _ref.reset,
       children = _ref.children;
   return __jsx("div", {
-    className: "columns",
+    className: "row",
+    id: "nav",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: this
   }, __jsx("div", {
-    className: "column column-sml",
+    className: "col-sm-1",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -257,6 +259,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     __self: this
   }, __jsx("img", {
+    id: "logo",
     className: "img-sml clickable",
     src: "https://www.usv.com/wp-content/uploads/2019/04/usv_logo.jpg",
     __source: {
@@ -264,14 +267,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 9
     },
     __self: this
-  }))), __jsx("div", {
+  }))), __jsx("ul", {
     className: "nav-links-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  }, __jsx("p", {
+  }, __jsx("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
@@ -286,7 +289,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 12
     },
     __self: this
-  }, "Cash Views")), __jsx("p", {
+  }, "Cash Views")), __jsx("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
@@ -310,10 +313,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 15
     },
     __self: this
-  }), __jsx("p", {
+  }), __jsx("ul", {
+    className: "nav-links-container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
+    },
+    __self: this
+  }, __jsx("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
     },
     __self: this
   }, __jsx("a", {
@@ -322,14 +332,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     target: "_typeform",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
-  }, "+ New Deal"))), __jsx("div", {
-    className: "columns column inner-content",
+  }, "+ New Deal")))), __jsx("div", {
+    className: "col-sm-11",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
   }, children));
@@ -350,7 +360,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/components/Team.js";
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/components/Team.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -358,7 +368,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   var team = _ref.team,
       activePartner = _ref.activePartner,
       reset = _ref.reset;
-  return __jsx("div", {
+  return __jsx("ul", {
     className: "team-wrapper",
     __source: {
       fileName: _jsxFileName,
@@ -384,7 +394,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }, __jsx("img", {
       src: person.fields.avatar[0].url,
       alt: person.fields.name,
-      className: activePartner == person.fields.name ? "img-xtra-sml padding-sml clickable person-avatar person-avatar--active" : "img-xtra-sml padding-sml clickable person-avatar",
+      className: activePartner == person.fields.name ? "img-sml padding-sml clickable person-avatar person-avatar--active" : "img-sml padding-sml clickable person-avatar",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 7
@@ -392,25 +402,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       __self: this
     })));
   }));
-}); // import Link from 'next/link'
-//
-// const Team = props => {
-//   return (
-//     <div className="team-wrapper">
-//       { props.team.map(person =>
-//         <img
-//           className={props.activePartner == person.fields.name ? "img-xtra-sml padding-sml clickable person-avatar person-avatar--active" : "img-xtra-sml padding-sml clickable person-avatar"}
-//           key={person.fields.name}
-//           src={person.fields.avatar[0].thumbnails.large.url}
-//         />
-//       )}
-//     </div>
-//   )
-// }
-//
-// export default Team
-//
-//
+});
 
 /***/ }),
 
@@ -532,6 +524,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-float.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-float.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-float */ "./node_modules/core-js/library/fn/parse-float.js");
 
 /***/ }),
 
@@ -1551,6 +1554,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/parse-float.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/parse-float.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/es6.parse-float */ "./node_modules/core-js/library/modules/es6.parse-float.js");
+module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseFloat;
 
 
 /***/ }),
@@ -3423,6 +3439,25 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_parse-float.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_parse-float.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseFloat = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseFloat;
+var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
+
+module.exports = 1 / $parseFloat(__webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js") + '-0') !== -Infinity ? function parseFloat(str) {
+  var string = $trim(String(str), 3);
+  var result = $parseFloat(string);
+  return result === 0 && string.charAt(0) == '-' ? -0 : result;
+} : $parseFloat;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3740,6 +3775,60 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-trim.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
+var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
+var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-ws.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -4322,6 +4411,21 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.parse-float.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.parse-float.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $parseFloat = __webpack_require__(/*! ./_parse-float */ "./node_modules/core-js/library/modules/_parse-float.js");
+// 18.2.4 parseFloat(string)
+$export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
 
 /***/ }),
@@ -5368,10 +5472,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js!./":
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js ***!
-  \*******************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js!./":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js ***!
+  \*************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10522,22 +10626,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-fetch */ "./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
-/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_Companies__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Companies */ "./components/Companies.js");
-/* harmony import */ var _components_GoogleDoc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/GoogleDoc */ "./components/GoogleDoc.js");
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-google-login */ "./node_modules/react-google-login/dist/google-login.js");
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-float */ "./node_modules/@babel/runtime-corejs2/core-js/parse-float.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-fetch */ "./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _components_Companies__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Companies */ "./components/Companies.js");
+/* harmony import */ var _components_GoogleDoc__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/GoogleDoc */ "./components/GoogleDoc.js");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-google-login */ "./node_modules/react-google-login/dist/google-login.js");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -10547,9 +10653,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/danigrant/Projects/usv-dashboard/pages/index.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+var _jsxFileName = "/Users/nickgrossman/dev/usv/usv-dashboard-2/pages/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement;
 
 
 
@@ -10559,34 +10666,62 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(Index, _React$Component);
 
   function Index() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Index);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Index);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "state", {
       activeCompany: {},
       activeCompanyIndex: 0
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "setActiveCompany", function (company, index) {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "accountingFormatMillions", function (number) {
+      if (isNaN(number)) {
+        return "";
+      }
+
+      var fmt_num = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2___default()(number).toFixed(1);
+
+      if (number < 0) {
+        fmt_num = "($" + fmt_num * -1 + "mm)";
+      } else {
+        if (number > 1000) {
+          fmt_num = fmt_num / 1000;
+          fmt_num = fmt_num.toFixed(2);
+          fmt_num = "$" + fmt_num + "B";
+        } else {
+          fmt_num = "$" + fmt_num + "mm";
+        }
+      }
+
+      return fmt_num;
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "percentFormat", function (number) {
+      var fmt_num = _babel_runtime_corejs2_core_js_parse_float__WEBPACK_IMPORTED_MODULE_2___default()(number * 100).toFixed(2);
+
+      return fmt_num + "%";
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "setActiveCompany", function (company, index) {
       _this.setState({
         activeCompany: company,
         activeCompanyIndex: index
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this), "reset",
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "reset",
     /*#__PURE__*/
     Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
     /*#__PURE__*/
@@ -10618,7 +10753,7 @@ function (_React$Component) {
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(Index, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -10635,10 +10770,10 @@ function (_React$Component) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 74
           },
           __self: this
-        }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_14___default.a, {
+        }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_15___default.a, {
           clientId: "810380289272-v86e6hkvtaj7280do08emcma1bi79t3b.apps.googleusercontent.com",
           buttonText: "Login",
           onSuccess: login,
@@ -10648,53 +10783,83 @@ function (_React$Component) {
           cookiePolicy: 'single_host_origin',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 75
           },
           __self: this
         }));
       } else {
-        return __jsx("div", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62
-          },
-          __self: this
-        }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_12__["default"], {
           team: team,
           reset: this.reset,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 86
           },
           __self: this
-        }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        }, __jsx("div", {
+          "class": "row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87
+          },
+          __self: this
+        }, __jsx("div", {
+          "class": "col-sm-2",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 88
+          },
+          __self: this
+        }, companies && __jsx(_components_Companies__WEBPACK_IMPORTED_MODULE_13__["default"], {
           companies: companies,
           activeCompany: activeCompany,
           setActiveCompany: this.setActiveCompany,
           activeCompanyIndex: activeCompanyIndex,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 91
           },
           __self: this
-        }), __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_13__["default"], {
-          url: activePartner ? "https://docs.google.com/document/d/1VfDzcGrPgCEtk8nleFqhOneieSinSD7tBysE7LMchA4/edit#heading=".concat(activeCompany.notes_gdoc_heading_id) : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+        })), __jsx("div", {
+          "class": "col-sm-10",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 94
           },
           __self: this
-        }), __jsx("div", {
+        }, __jsx("div", {
+          "class": "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 95
           },
           __self: this
-        }, activeCompany.name && __jsx("div", {
-          className: "column column-med",
+        }, __jsx("div", {
+          "class": "col-sm-5",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 96
+          },
+          __self: this
+        }, __jsx("div", {
+          "class": "clearfix",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          },
+          __self: this
+        }, __jsx("h2", {
+          "class": "company-name",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          },
+          __self: this
+        }, activeCompany.name), __jsx("div", {
+          "class": "ceo-faces",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99
           },
           __self: this
         }, activeCompany.ceo_faces ? activeCompany.ceo_faces.map(function (ceo) {
@@ -10703,26 +10868,205 @@ function (_React$Component) {
             src: ceo.url,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 74
+              lineNumber: 101
             },
             __self: this
           });
-        }) : '', __jsx("p", {
+        }) : '')), __jsx("table", {
+          "class": "table",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 105
+          },
+          __self: this
+        }, __jsx("tr", {
+          "class": "section-header",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 107
+          },
+          __self: this
+        }, "Metrics"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 108
+          },
+          __self: this
+        })), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, "Cash on Hand"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          },
+          __self: this
+        }, this.accountingFormatMillions(activeCompany.cash_on_hand))), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 114
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115
+          },
+          __self: this
+        }, "Burn or Earnings"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 116
+          },
+          __self: this
+        }, this.accountingFormatMillions(activeCompany.burn_or_earnings))), __jsx("tr", {
+          "class": "section-header",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 118
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 119
+          },
+          __self: this
+        }, "Ownership"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120
+          },
+          __self: this
+        })), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 122
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 123
+          },
+          __self: this
+        }, "USV Ownership"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
+          },
+          __self: this
+        }, this.percentFormat(activeCompany.percent_ownership))), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 126
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 127
+          },
+          __self: this
+        }, "Cumulative USV Investment"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 128
+          },
+          __self: this
+        }, this.accountingFormatMillions(activeCompany.cumulative_usv_investment))), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 130
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 131
+          },
+          __self: this
+        }, "Cumulative Carrying Value"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 132
+          },
+          __self: this
+        }, this.accountingFormatMillions(activeCompany.cumulative_carrying_value))), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135
+          },
+          __self: this
+        }, "Estimated Enterprise Value"), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 136
+          },
+          __self: this
+        }, this.accountingFormatMillions(activeCompany.estimated_enterprise_value))), __jsx("tr", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138
+          },
+          __self: this
+        }, __jsx("th", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 139
+          },
+          __self: this
+        }), __jsx("td", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 140
           },
           __self: this
         }, __jsx("a", {
           className: "clickable",
-          href: activeCompany.onepager_gdoc_url,
+          href: activeCompany.one_pager_url,
           target: "_blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 140
           },
           __self: this
-        }, "One Pager"))))));
+        }, "One Pager"))))), __jsx("div", {
+          "class": "col-sm-7",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 144
+          },
+          __self: this
+        }, __jsx(_components_GoogleDoc__WEBPACK_IMPORTED_MODULE_14__["default"], {
+          url: activePartner ? "".concat(activeCompany.notes_gdoc_url) : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 145
+          },
+          __self: this
+        }))))));
       }
     }
   }], [{
@@ -10738,12 +11082,12 @@ function (_React$Component) {
               case 0:
                 query = _ref2.query;
                 // http://localhost:3000/?q=rebecca
-                name = query.q ? query.q.toLowerCase() : ""; // fetch the team
+                name = query.q ? query.q : ""; // fetch the team
 
                 _context2.next = 4;
-                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard', {
+                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_11___default()('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', {
                   headers: {
-                    "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
+                    "Authorization": "Bearer ".concat("keyb2gigIEYanSFai")
                   }
                 });
 
@@ -10755,9 +11099,9 @@ function (_React$Component) {
               case 7:
                 jsonTeam = _context2.sent;
                 _context2.next = 10;
-                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_10___default()("https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Organizations?filterByFormula=%7Bpartner_username%7D%3D'".concat(name, "'&view=USV+Portfolio+Companies"), {
+                return isomorphic_fetch__WEBPACK_IMPORTED_MODULE_11___default()("https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7Bpartner%7D%3D'".concat(name, "'"), {
                   headers: {
-                    "Authorization": "Bearer ".concat("keyVM2c7uN5IJ1gn3")
+                    "Authorization": "Bearer ".concat("keyb2gigIEYanSFai")
                   }
                 });
 
@@ -10791,20 +11135,20 @@ function (_React$Component) {
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_10___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************/
+/*!*****************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fusv-dashboard%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fnickgrossman%2Fdev%2Fusv%2Fusv-dashboard-2%2Fpages%2Findex.js!./");
 
 
 /***/ }),

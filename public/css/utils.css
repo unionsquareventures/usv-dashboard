@@ -3,11 +3,7 @@
 
 /* defaults */
 html, body {
-  margin: 0;
-  padding: 10px;
-  font-size: 1rem;
-  height: -webkit-fill-available;
-  font-family: -apple-system, BlinkMacSystemFont;
+  padding-top: 10px;
 }
 
 a {
@@ -33,31 +29,22 @@ a {
 /* columns */
 
 .columns {
-  display: flex;
-	flex-flow: row wrap;
-	justify-content: left;
-  height: -webkit-fill-available;
-  /* min-height: 1500px; */
+
 }
 
 .column {
-	flex: 1;
-	margin: 2px;
-	padding: 10px;
-  padding-top: 10px;
+
 }
 
 .column-sml {
-  max-width: 90px;
+
 }
 
 .column-med {
-  max-width: 300px;
+
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
 }
 
 /* sizing */
