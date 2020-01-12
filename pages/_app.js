@@ -20,11 +20,11 @@ class USVDashboard extends App {
           <title>USV Dashboard</title>
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossOrigin="anonymous" />
           <link rel="stylesheet" href="/css/utils.css" />
           <link rel="stylesheet" href="/css/styles.css" />
         </Head>
-        <div class="container-fluid">
+        <div className="container-fluid">
         <Component {...pageProps} login={this.login} loggedInUser={loggedInUser} />
         </div>
       </div>

@@ -103,75 +103,82 @@ class Index extends React.Component {
     } else {
       return (
           <Layout team={team} reset={this.reset} >
-            <div class="row">
-                <div class="col-sm-2">
-                  {
-                    companies &&
-                    <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
-                  }
-                </div>
-              <div class="col-sm-10">
-                 <div class="row">
-                    <div class="col-sm-5">
-                      <div class="clearfix">
-                      <h2 class="company-name">{activeCompany.name}</h2>
-                        <div class="ceo-faces">
-                          {
-                              activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
-                            }
-                          </div>
-                      </div>
-                      <table class="table">
-                       <tr class="section-header">
-                            <th>Metrics</th>
-                            <td>as of {activeCompany.latest_metrics_date}</td>
-                          </tr>
-                        <tr>
-                          <th>Cash on Hand</th>
-                          <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
-                        </tr>
-                        <tr>
-                          <th>Burn or Earnings</th>
-                          <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
-                        </tr>
-                          <tr class="section-header">
-                            <th>Ownership</th>
-                            <td>as of {activeCompany.latest_valuation_date}</td>
-                          </tr>
-                        <tr>
-                            <th>USV Ownership</th>
-                            <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
-                          </tr>
-                        <tr>
-                            <th>Funds</th>
-                            <td>{this.fundsFormat(activeCompany.funds)}</td>
-                          </tr>
-                        <tr>
-                            <th>Cumulative USV Investment</th>
-                            <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
-                          </tr>
-                          <tr>
-                            <th>Cumulative Carrying Value</th>
-                            <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)}
-                             &nbsp;{this.multipleFormat(activeCompany.multiple)}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>Estimated Enterprise Value</th>
-                            <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
-                          </tr>
-                          <tr>
-                            <th></th>
-                            <td><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></td>
-                          </tr>
-                      </table>
-                    </div>
-                    <div class="col-sm-7">
-                      <GoogleDoc url={activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
-                    </div>
+            <div className="row">
+                {
+                  companies &&
+                   <div>
+                     <div className="col-sm-2">
+                       <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
+                     </div>
+                     <div className="col-sm-10">
+                        <div className="row">
+                           <div className="col-sm-5">
+                             <div className="clearfix">
+                             <h2 className="company-name">{activeCompany.name}</h2>
+                               <div className="ceo-faces">
+                                 {
+                                     activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                                   }
+                                 </div>
+                             </div>
+                             <table className="table">
+                              <tr className="section-header">
+                                   <th>Metrics</th>
+                                   <td>as of {activeCompany.latest_metrics_date}</td>
+                                 </tr>
+                               <tr>
+                                 <th>Cash on Hand</th>
+                                 <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
+                               </tr>
+                               <tr>
+                                 <th>Burn or Earnings</th>
+                                 <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
+                               </tr>
+                                 <tr className="section-header">
+                                   <th>Ownership</th>
+                                   <td>as of {activeCompany.latest_valuation_date}</td>
+                                 </tr>
+                               <tr>
+                                   <th>USV Ownership</th>
+                                   <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
+                                 </tr>
+                               <tr>
+                                   <th>Funds</th>
+                                   <td>{this.fundsFormat(activeCompany.funds)}</td>
+                                 </tr>
+                               <tr>
+                                   <th>Cumulative USV Investment</th>
+                                   <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
+                                 </tr>
+                                 <tr>
+                                   <th>Cumulative Carrying Value</th>
+                                   <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)}
+                                    &nbsp;{this.multipleFormat(activeCompany.multiple)}
+                                   </td>
+                                 </tr>
+                                 <tr>
+                                   <th>Estimated Enterprise Value</th>
+                                   <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
+                                 </tr>
+                                 <tr>
+                                   <th></th>
+                                   <td><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></td>
+                                 </tr>
+                             </table>
+                           </div>
+                           <div className="col-sm-7">
+                             <GoogleDoc url={activeCompany.notes_gdoc_url} />
+                           </div>
+                         </div>
+                     </div>
+                   </div>
+                }
+                {
+                  !companies &&
+                  <div className="col-sm-11">
+                    <GoogleDoc url="https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit" />
                   </div>
-
-              </div>
+                }
             </div>
           </Layout>
       )

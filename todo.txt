@@ -1,22 +1,5 @@
 
 To Dos:
 
- * fix next / previous buttons.  they don't always work, and if you manually click into an item in the list, they pick up in the wrong place.  the app needs to keep track of the index of the current company, and the next/prev needs increment/decrement the index.
-
- * clicking on faces: currently requires a double click.
-
- * add panel for one-pager for each company.  should this be an iframe or a link off? [it is currently a link we can definitely switch it to an iframe] Or some kind of expandable tab?  Related: we should load all of the google docs up front in separate iframes and then just switch between them, to make switching faster
-
- * add google auth and then once that is added, switch to the real airtable and google docs
-
- * on every route change, reset the dash: index.js this.setState({ activeCompany: {}, activeCompanyIndex: 0 })
-
- * display partners and companies in a random order (do this in getinitialprops)
-
- * when you first move to a partner needs to show their doc and the ceo faces, it doesn't because active company is not set to 0, related to two issues above
-
- * persist authed session
-
-Done:
-
- * add link to "add a new deal" typeform
+ * remove crypto companies from the displayed companies
+ * when you click a partner face, it should load their first company, rather than a blank template
