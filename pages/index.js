@@ -27,6 +27,17 @@ class Index extends React.Component {
     }
   }
 
+  static getDerivedStateFromProps(props, state) {
+    const { companies } = props
+    const { activeCompanyIndex } = state
+
+    if (companies) {
+      return { activeCompany: companies[activeCompanyIndex].fields, activeCompanyIndex: activeCompanyIndex }
+    }
+
+    return { activeCompany: {}, activeCompanyIndex: 0 }
+  }
+
   accountingFormatMillions = (number) => {
     if (isNaN(number)) {
       return ""
