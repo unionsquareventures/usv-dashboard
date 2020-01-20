@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 
 class USVDashboard extends App {
-  state = { loggedInUser: true }
+  state = { loggedInUser: false }
 
   login = (response) => {
     if (response.profileObj.email.split("@")[1] === "usv.com") {
