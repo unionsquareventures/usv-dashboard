@@ -148,6 +148,13 @@ class Index extends React.Component {
                               <th>Burn or Earnings</th>
                               <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                             </tr>
+                            { activeCompany.financing_status ? 
+                            <tr>
+                              <th>Financing Status</th>
+                              <td>{activeCompany.financing_status}</td>
+                            </tr>
+                            : ''
+                            }
                             <tr className="section-header">
                               <th>Ownership</th>
                               <td>as of {activeCompany.latest_valuation_date}</td>
@@ -158,18 +165,18 @@ class Index extends React.Component {
                             </tr>
                             <tr>
                               <th>Funds</th>
-                              <td>{this.fundsFormat(activeCompany.funds)}</td>
+                              <td>{activeCompany.funds ? activeCompany.funds.map(fund => <span className={`badge fund-${fund}`}>{fund}</span>) : '' }</td>
                             </tr>
                             <tr>
-                              <th>Cumulative USV Investment</th>
+                              <th>USV Investment</th>
                               <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
                             </tr>
                             <tr>
-                              <th>Cumulative Carrying Value</th>
+                              <th>Carrying Value</th>
                               <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} &nbsp; {this.multipleFormat(activeCompany.multiple)} </td>
                             </tr>
                             <tr>
-                              <th>Estimated Enterprise Value</th>
+                              <th>Computed EV</th>
                               <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
                             </tr>
                             <tr>
