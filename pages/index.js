@@ -102,7 +102,7 @@ class Index extends React.Component {
       return (
         <div>
           <GoogleLogin
-            clientId="810380289272-v86e6hkvtaj7280do08emcma1bi79t3b.apps.googleusercontent.com"
+            clientId={process.env.GOOGLE_CLIENT_ID}
             buttonText="Login"
             onSuccess={login}
             onFailure={(res) => console.log("login failed")}
