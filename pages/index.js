@@ -76,9 +76,8 @@ class Index extends React.Component {
 
   reset = async () => {
     const { companies } = this.props
-
     try {
-      this.setState({ activeCompany: companies[0], activeCompanyIndex: 0 })
+      this.setState({ activeCompany: companies[0].fields, activeCompanyIndex: 0 })
     } catch (e) {
       console.log(e)
     }
@@ -117,14 +116,15 @@ class Index extends React.Component {
                         <h2 className="company-name">{activeCompany.name}</h2>
                         <div className="ceo-faces">
                           {
-                            activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-sml circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
+                            activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-md circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
                           }
                         </div>
                       </div>
                       {
                         companies &&
                         <div>
-                          <table className="table">
+                          <table className="table" id="company-stats">
+                          <tbody>
                             <tr className="section-header">
                               <th>Metrics</th>
                               <td>as of {activeCompany.latest_metrics_date}</td>
@@ -165,6 +165,7 @@ class Index extends React.Component {
                               <th></th>
                               <td><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></td>
                             </tr>
+                            </tbody>
                           </table>
                         </div>
                       }

@@ -57,8 +57,9 @@ h2.company-name {
   color: black;
   border-radius: 5px;
 }
-.company p {
+.companies-wrapper p {
   margin: 0;
+  color: #333;
 }
 
 .nav-arrow {
