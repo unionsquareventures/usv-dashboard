@@ -14,9 +14,11 @@ class Index extends React.Component {
     const resMenus = await fetch('https://api.airtable.com/v0/appTDiBNIJawBi2l5/Menus?view=viwz9PT3FOx6hhBcA', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonMenus = await resMenus.json()
 
+    /*
     // fetch the team
     const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonTeam = await resTeam.json()
+    */
 
     // http://localhost:3000/?q=rebecca
     const term = query.q ? query.q.replace('%20', ' ') : ""
@@ -38,7 +40,8 @@ class Index extends React.Component {
     // return as props
     return {
       menus: jsonMenus.records,
-      team: shuffle(jsonTeam.records),
+      /*team: shuffle(jsonTeam.records),*/
+      team: [],
       companies: jsonCompanies.records ? shuffle(jsonCompanies.records) : null,
       activeQuery: term.length > 0 ? term : null,
     }
