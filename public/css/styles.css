@@ -152,6 +152,9 @@ a.nav-link {
 .nav-item.person img {
   border-radius: 50px;
 }
+.company-edit-buttons a.btn {
+  font-size: .9em;
+}
 .alert {
   border-radius: 0;
   text-transform: uppercase;

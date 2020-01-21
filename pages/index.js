@@ -197,8 +197,13 @@ class Index extends React.Component {
                               <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
                             </tr>
                             <tr>
-                              <th></th>
-                              <td><a className="clickable" href={activeCompany.one_pager_url} target="_blank">One Pager</a></td>
+                              <td colspan="2" class="company-edit-buttons">
+                                <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
+                                <a className="btn btn-light" href={`https://airtable.com/tblDw6nMnbLsBUyON/viw4ILnizUR2WsxJU/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details</a> &nbsp;
+                                <a className="btn btn-light" href="https://airtable.com/tblRHx5A9pgEIUNGP/viw5wx0eAbR9Hxc6X?blocks=hide" target="_airtable">Transactions</a> &nbsp;
+                                <a className="btn btn-light" href="https://airtable.com/tblwvszzdJFQX8UQP/viwda2fq4V1Hwt52z?blocks=hide" target="_airtable">Valuations</a> &nbsp;
+                                <a className="btn btn-light" href="https://airtable.com/tblc8af4nqyxPW29z/viwrbrtQkpti8rEXu?blocks=hide" target="_airtable">Metrics</a>
+                              </td>
                             </tr>
                             </tbody>
                           </table>
