@@ -145,3 +145,16 @@ tr.section-header td {
 .nav-links-container li {
   margin-bottom: 10px;
 }
+a.nav-link {
+  padding: 5px 0 5px 3px;
+
+}
+.nav-item.person img {
+  border-radius: 50px;
+}
+.alert {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align:center;
+}

@@ -10,45 +10,46 @@ class Index extends React.Component {
 
   static async getInitialProps({ query }) {
 
-    // fetch the team
+    // fetch the menus
     const resMenus = await fetch('https://api.airtable.com/v0/appTDiBNIJawBi2l5/Menus?view=viwz9PT3FOx6hhBcA', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonMenus = await resMenus.json()
 
+    // fetch the team
+    const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
+    const jsonTeam = await resTeam.json()
+
     // http://localhost:3000/?q=rebecca
-    let term = ""
-    let value = ""
-    if (query.p) {
-      term = "partner"
-      value = query.p
-    }
-    if (query.c) {
-      term = "categories"
-      value = query.c
-    }
-    if (query.f) {
-      term = "funds"
-      value = query.f.replace('%20', ' ')
-    }
+    const term = query.q ? query.q.replace('%20', ' ') : ""
+    const type = query.t ? query.t : ""
 
     // fetch the partner's companies
-    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7B${term}%7D%3D'${value}'`
+    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?view=viw4ILnizUR2WsxJU&filterByFormula=%7B${type}%7D%3D'${term}'`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
+
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
 
     // return as props
     return {
       menus: jsonMenus.records,
-      companies: jsonCompanies.records ? jsonCompanies.records : null,
-      activePartner: value.length > 0 ? value : null,
+      team: shuffle(jsonTeam.records),
+      companies: jsonCompanies.records ? shuffle(jsonCompanies.records) : null,
+      activeQuery: term.length > 0 ? term : null,
     }
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { companies } = props
+    const { companies, activeQuery } = props
     const { activeCompanyIndex } = state
 
     if (companies) {
-      return { activeCompany: companies[activeCompanyIndex].fields, activeCompanyIndex: activeCompanyIndex }
+      return { activeCompany: companies[activeCompanyIndex].fields, activeCompanyIndex: activeCompanyIndex, activeQuery: activeQuery }
     }
 
     return { activeCompany: {}, activeCompanyIndex: 0 }
@@ -111,8 +112,8 @@ class Index extends React.Component {
   }
 
   render() {
-    const { menus, companies, activePartner, loggedInUser, login } = this.props
-    const { activeCompany, activeCompanyIndex } = this.state
+    const { menus, team, companies, loggedInUser, login } = this.props
+    const { activeQuery, activeCompany, activeCompanyIndex } = this.state
 
     if (!loggedInUser) {
       return (
@@ -128,12 +129,12 @@ class Index extends React.Component {
       )
     } else {
       return (
-          <Layout menus={menus} reset={this.reset} >
+          <Layout menus={menus} team={team} reset={this.reset} >
             <div className="row">
                 {
                   companies &&
                   <div className="col-sm-2">
-                    <Companies companies={companies} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
+                    <Companies companies={companies} activeQuery={activeQuery} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
                   </div>
                 }
                 <div className="col-sm-10">
@@ -205,7 +206,7 @@ class Index extends React.Component {
                       }
                     </div>
                   <div className={companies ? "col-sm-7" : "col-sm-12"}>
-                    <GoogleDoc url={activePartner ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
+                    <GoogleDoc url={activeQuery ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                   </div>
                 </div>
               </div>
