@@ -3,7 +3,6 @@ import Layout from '../components/Layout'
 import Companies from '../components/Companies'
 import GoogleDoc from '../components/GoogleDoc'
 import GoogleLogin from 'react-google-login';
-const querystring = require('querystring')
 
 class Index extends React.Component {
   state = { activeCompany: {}, activeCompanyIndex: 0 }
@@ -24,8 +23,10 @@ class Index extends React.Component {
     const term = query.q ? query.q.replace('%20', ' ') : ""
     const type = query.t ? query.t : ""
 
+    //const filterByFormula = encodeURIComponent(`Find("${term}",${type})`);
+
     // fetch the partner's companies
-    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?view=viw4ILnizUR2WsxJU&filterByFormula=%7B${type}%7D%3D'${term}'`
+    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
