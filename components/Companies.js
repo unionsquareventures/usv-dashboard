@@ -27,7 +27,7 @@ class Companies extends React.Component {
       )
     } else return (
       <div className="companies-wrapper">
-        {/*<div class="alert alert-primary" role="alert">{activeQuery}</div>*/}
+        <div class="alert alert-primary" role="alert">{activeQuery}</div>
         <div onClick={this.decrementActiveCompany} className="nav-arrow clickable"><i className="material-icons">navigate_before_rounded</i></div>
         <div onClick={this.incrementActiveCompany} className="nav-arrow clickable"><i className="material-icons">navigate_next_rounded</i></div>
         {companies.map((company, index) => (
