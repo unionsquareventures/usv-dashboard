@@ -142,3 +142,6 @@ tr.section-header td {
 .badge.fund-2019.Oppty{
   background: #72dcc3;
 }
+.nav-links-container li {
+  margin-bottom: 10px;
+}

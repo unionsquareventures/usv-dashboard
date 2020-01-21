@@ -29,6 +29,7 @@ class Companies extends React.Component {
       <div className="companies-wrapper">
         <div onClick={this.decrementActiveCompany} className="nav-arrow clickable"><i className="material-icons">navigate_before_rounded</i></div>
         <div onClick={this.incrementActiveCompany} className="nav-arrow clickable"><i className="material-icons">navigate_next_rounded</i></div>
+
         {companies.map((company, index) => (
           <div className="company" key={company.id}>
             <p className={activeCompany.name == company.fields.name || activeCompanyIndex == index ? "clickable companies-wrapper-item companies-wrapper-item--active" : "clickable companies-wrapper-item"} onClick={() => { setActiveCompany(company.fields, index)}}>{company.fields.name}</p>

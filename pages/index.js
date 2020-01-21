@@ -3,27 +3,43 @@ import Layout from '../components/Layout'
 import Companies from '../components/Companies'
 import GoogleDoc from '../components/GoogleDoc'
 import GoogleLogin from 'react-google-login';
+const querystring = require('querystring')
 
 class Index extends React.Component {
   state = { activeCompany: {}, activeCompanyIndex: 0 }
 
   static async getInitialProps({ query }) {
-    // http://localhost:3000/?q=rebecca
-    const name = query.q ? query.q : ""
 
     // fetch the team
-    const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
-    const jsonTeam = await resTeam.json()
+    const resMenus = await fetch('https://api.airtable.com/v0/appTDiBNIJawBi2l5/Menus?view=viwz9PT3FOx6hhBcA', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
+    const jsonMenus = await resMenus.json()
+
+    // http://localhost:3000/?q=rebecca
+    let term = ""
+    let value = ""
+    if (query.p) {
+      term = "partner"
+      value = query.p
+    }
+    if (query.c) {
+      term = "categories"
+      value = query.c
+    }
+    if (query.f) {
+      term = "funds"
+      value = query.f.replace('%20', ' ')
+    }
 
     // fetch the partner's companies
-    const resCompanies = await fetch(`https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7Bpartner%7D%3D'${name}'`, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
+    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%7B${term}%7D%3D'${value}'`
+    const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
     // return as props
     return {
-      team: jsonTeam.records,
-      companies: jsonCompanies.records.length > 0 ? jsonCompanies.records : null,
-      activePartner: name.length > 0 ? name : null
+      menus: jsonMenus.records,
+      companies: jsonCompanies.records ? jsonCompanies.records : null,
+      activePartner: value.length > 0 ? value : null,
     }
   }
 
@@ -95,7 +111,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const { team, companies, activePartner, loggedInUser, login } = this.props
+    const { menus, companies, activePartner, loggedInUser, login } = this.props
     const { activeCompany, activeCompanyIndex } = this.state
 
     if (!loggedInUser) {
@@ -112,7 +128,7 @@ class Index extends React.Component {
       )
     } else {
       return (
-          <Layout team={team} reset={this.reset} >
+          <Layout menus={menus} reset={this.reset} >
             <div className="row">
                 {
                   companies &&
