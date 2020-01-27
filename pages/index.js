@@ -26,7 +26,11 @@ class Index extends React.Component {
     //const filterByFormula = encodeURIComponent(`Find("${term}",${type})`);
 
     // fetch the partner's companies
-    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})`
+    let view = ""
+    if (type == "partner") {
+      view = "viwYmeWLfdNELpzD8"
+    }
+    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
