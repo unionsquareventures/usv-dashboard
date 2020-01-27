@@ -86,7 +86,7 @@ class Index extends React.Component {
     if (isNaN(number)) {
       return ""
     }
-    var fmt_num = parseFloat(number * 100).toFixed(2)
+    var fmt_num = parseFloat(number * 100).toFixed(0)
     return fmt_num + "%"
   }
 
@@ -173,6 +173,13 @@ class Index extends React.Component {
                               <th>Burn or Earnings</th>
                               <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                             </tr>
+                            { activeCompany.latest_revenue_run_rate ? 
+                            <tr>
+                              <th>Revenue Run Rate</th>
+                              <td>{this.accountingFormatMillions(activeCompany.latest_revenue_run_rate)}</td>
+                            </tr>
+                            : ''
+                            }
                             { activeCompany.financing_status ? 
                             <tr>
                               <th>Financing Status</th>
