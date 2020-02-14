@@ -57,7 +57,9 @@ class Index extends React.Component {
     const { activeCompanyIndex } = state
 
     if (companies) {
-      return { activeCompany: companies[activeCompanyIndex].fields, activeCompanyIndex: activeCompanyIndex, activeQuery: activeQuery }
+      // if just switched partners, reset company index to 0
+      const newActiveCompanyIndex = props.activeQuery !== state.activeQuery ? 0 : activeCompanyIndex
+      return { activeCompany: companies[newActiveCompanyIndex].fields, activeCompanyIndex: newActiveCompanyIndex, activeQuery }
     }
 
     return { activeCompany: {}, activeCompanyIndex: 0 }
@@ -173,14 +175,14 @@ class Index extends React.Component {
                               <th>Burn or Earnings</th>
                               <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                             </tr>
-                            { activeCompany.latest_revenue_run_rate ? 
+                            { activeCompany.latest_revenue_run_rate ?
                             <tr>
                               <th>Revenue Run Rate</th>
                               <td>{this.accountingFormatMillions(activeCompany.latest_revenue_run_rate)}</td>
                             </tr>
                             : ''
                             }
-                            { activeCompany.financing_status ? 
+                            { activeCompany.financing_status ?
                             <tr>
                               <th>Financing Status</th>
                               <td>{activeCompany.financing_status}</td>
@@ -226,7 +228,7 @@ class Index extends React.Component {
                       }
                     </div>
                   <div className={companies ? "col-sm-7" : "col-sm-12"}>
-                    <GoogleDoc url={activeQuery ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
+                    <GoogleDoc url={companies ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                   </div>
                 </div>
               </div>

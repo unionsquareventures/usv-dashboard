@@ -11,6 +11,9 @@ USV Dashboard
 
 ```
 AIRTABLE_KEY=key123456789
+GOOGLE_CLIENT_ID=810380289272-v86e6hkvtaj7280do08emcma1bi79t3b.apps.googleusercontent.com
+DISABLE_LOGIN=true
 ```
+^ that last DISABLE_LOGIN=true is just for development environments, it should not be there for production environments
 
 4. Run `npm run dev` to run the project locally. Then go to localhost:3000 in the browser to view it.
