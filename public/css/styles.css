@@ -154,6 +154,7 @@ a.nav-link {
 }
 .company-edit-buttons a.btn {
   font-size: .9em;
+  margin-bottom: 10px;
 }
 .alert {
   border-radius: 0;
