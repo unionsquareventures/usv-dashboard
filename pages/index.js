@@ -30,6 +30,9 @@ class Index extends React.Component {
     if (type == "partner") {
       view = "viwYmeWLfdNELpzD8"
     }
+    if (type == "categories") {
+      view = "viwRvHr6T6yc5nsRt" // use partner-sorted view for categories.
+    }
     const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
@@ -43,11 +46,17 @@ class Index extends React.Component {
     }
 
     // return as props
+    let companies = null
+    if (type == "categories") {
+      companies = jsonCompanies.records
+    } else {
+      companies = shuffle(jsonCompanies.records)
+    }
     return {
       menus: jsonMenus.records,
       /*team: shuffle(jsonTeam.records),*/
       team: [],
-      companies: jsonCompanies.records ? shuffle(jsonCompanies.records) : null,
+      companies: companies,
       activeQuery: term.length > 0 ? term : null,
     }
   }
