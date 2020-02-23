@@ -48,9 +48,9 @@ class Index extends React.Component {
     // return as props
     let companies = null
     if (type == "categories") {
-      companies = jsonCompanies.records
+      companies = jsonCompanies.records ? jsonCompanies.records : null
     } else {
-      companies = shuffle(jsonCompanies.records)
+      companies = jsonCompanies.records ? shuffle(jsonCompanies.records) : null
     }
     return {
       menus: jsonMenus.records,
@@ -158,7 +158,7 @@ class Index extends React.Component {
                 }
                 <div className="col-sm-10">
                   <div className="row">
-                    <div className="col-sm-5">
+                    <div className="col-sm-4">
                       <div className="clearfix">
                         <h2 className="company-name">{activeCompany.name}</h2>
                         <div className="ceo-faces">
@@ -236,7 +236,7 @@ class Index extends React.Component {
                         </div>
                       }
                     </div>
-                  <div className={companies ? "col-sm-7" : "col-sm-12"}>
+                  <div className={companies ? "col-sm-8" : "col-sm-12"}>
                     <GoogleDoc url={companies ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                   </div>
                 </div>
