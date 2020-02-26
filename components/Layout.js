@@ -15,7 +15,7 @@ export default ({ menus, team, companies, activePartner, reset, children }) => (
           <a className="nav-link" href="https://drive.google.com/drive/u/0/folders/0B1KsbxTl9h4lc1dUTm1CbVgxVHc" target="_cashviews">Cash Views</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="https://www.notion.so/usv/22807212393640a5a1351d3127202722?v=a0ecb213f2b1493e9460286d3b810769" target="_newdeals">New Deals</a>
+          <a className="nav-link" href="https://www.notion.so/usv/Monday-Deal-Log-17913432b4ab4649b1835cbbc4b46011" target="_newdeals">New Deals</a>
         </li>
         <hr />
             <li className="nav-item">
