@@ -7,12 +7,12 @@ import GoogleLogin from 'react-google-login';
 class Index extends React.Component {
   state = { activeCompany: {}, activeCompanyIndex: 0 }
 
-  static async getInitialProps({ query }) {
+  static async getInitialProps({ query, res, req }) {
 
     // fetch the menus
     const resMenus = await fetch('https://api.airtable.com/v0/appTDiBNIJawBi2l5/Menus?view=viwz9PT3FOx6hhBcA', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonMenus = await resMenus.json()
-
+    
     /*
     // fetch the team
     const resTeam = await fetch('https://api.airtable.com/v0/appPHYsJXq2j8dCKC/Team%20for%20Dashboard?view=viwFM5GhIM8H4BCOs', { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
@@ -191,13 +191,15 @@ class Index extends React.Component {
                             </tr>
                             : ''
                             }
-                            { activeCompany.financing_status ?
+                            { activeCompany.financing_status &&
                             <tr>
                               <th>Financing Status</th>
                               <td>{activeCompany.financing_status}</td>
                             </tr>
-                            : ''
+            
                             }
+                            { activeCompany.latest_valuation_date &&
+                            <React.Fragment> 
                             <tr className="section-header">
                               <th>Ownership</th>
                               <td>as of {activeCompany.latest_valuation_date}</td>
@@ -221,7 +223,10 @@ class Index extends React.Component {
                             <tr>
                               <th>Computed EV</th>
                               <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
-                            </tr>
+                            </tr> 
+                            </React.Fragment>
+                          } 
+
                             <tr>
                               <td colspan="2" class="company-edit-buttons">
                                 <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
