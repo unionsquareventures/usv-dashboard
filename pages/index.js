@@ -180,11 +180,11 @@ class Index extends React.Component {
                             <tbody>
                               <tr>
                                 <th>&nbsp;</th>
-                                <th>Amount Invsted</th>
+                                <th>Amount Invested</th>
                                 <th>Carrying Value</th>
                                 <th>Ownership</th>
                               </tr>
-                              {activeCompany.core_fund_investment >0 && 
+                              {activeCompany.core_fund_investment >0 &&
                               <tr>
                                 <th>{activeCompany.core_fund}</th>
                                 <td>{this.accountingFormatMillions(activeCompany.core_fund_investment)}</td>
