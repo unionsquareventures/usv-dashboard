@@ -151,13 +151,13 @@ class Index extends React.Component {
       return (
           <Layout menus={menus} team={team} reset={this.reset} >
             <div className="row">
+              <div className="col-sm-2">
+                <Team reset={this.reset} menus={menus} team={team} />
                 {
                   companies &&
-                  <div className="col-sm-2">
-                    <Team reset={this.reset} menus={menus} team={team} />
                     <Companies companies={companies} activeQuery={activeQuery} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
-                  </div>
                 }
+                </div>
                 <div className="col-sm-10">
                   <div className="row">
                     <div className="col-sm-6">
@@ -174,11 +174,10 @@ class Index extends React.Component {
                         <div>
                           <table className="table" id="company-stats">
                           <tbody>
-                            <tr className="section-header">
+                            {/*<tr className="section-header">
                               <th>Metrics</th>
                               <td>as of {activeCompany.latest_metrics_date}</td>
-                            </tr>
-
+                            </tr>*/}
                              <tr>
                                <th>Headcount</th>
                                <td>{activeCompany.latest_headcount}</td>
@@ -290,10 +289,7 @@ class Index extends React.Component {
                             <tr>
                               <td colspan="2" class="company-edit-buttons">
                                 <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
-                                <a className="btn btn-light" href={`https://airtable.com/tblDw6nMnbLsBUyON/viw4ILnizUR2WsxJU/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblRHx5A9pgEIUNGP/viw5wx0eAbR9Hxc6X?blocks=hide" target="_airtable">Transactions</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblwvszzdJFQX8UQP/viwda2fq4V1Hwt52z?blocks=hide" target="_airtable">Valuations</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblc8af4nqyxPW29z/viwrbrtQkpti8rEXu?blocks=hide" target="_airtable">Metrics</a>
+                                <a className="btn btn-light" href={`https://airtable.com/tblUkQWZIrttZ5wDL/viwnet4uSCne1QPmf/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details in Airtable</a> &nbsp;
                               </td>
                             </tr>
                             </tbody>
