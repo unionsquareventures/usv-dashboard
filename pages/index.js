@@ -28,12 +28,12 @@ class Index extends React.Component {
     // fetch the partner's companies
     let view = ""
     if (type == "partner") {
-      view = "viwYmeWLfdNELpzD8"
+      view = ""
     }
     if (type == "categories") {
       view = "viwRvHr6T6yc5nsRt" // use partner-sorted view for categories.
     }
-    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
+    const url = `https://api.airtable.com/v0/${process.env.AIRTABLE_COMPANIES_BASE_ID}/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
@@ -176,14 +176,20 @@ class Index extends React.Component {
                               <th>Metrics</th>
                               <td>as of {activeCompany.latest_metrics_date}</td>
                             </tr>
+
+                             <tr>
+                               <th>Headcount</th>
+                               <td>{activeCompany.latest_headcount}</td>
+                             </tr>
                             <tr>
                               <th>Cash on Hand</th>
                               <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
                             </tr>
-                            <tr>
+                             { activeCompany.burn_or_earnings &&
+                               <tr>
                               <th>Burn or Earnings</th>
                               <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
-                            </tr>
+                            </tr> }
                             { activeCompany.latest_revenue_run_rate ?
                             <tr>
                               <th>Revenue Run Rate</th>
@@ -196,36 +202,88 @@ class Index extends React.Component {
                               <th>Financing Status</th>
                               <td>{activeCompany.financing_status}</td>
                             </tr>
-            
                             }
+                            <tr>
+                              <th>Total Amount Raised</th>
+                              <td>{activeCompany.total_amount_raised}</td>
+                            </tr>
+                            <tr>
+                              <th>Major Co-investors</th>
+                              <td>{activeCompany.major_investors}</td>
+                            </tr>
+                            <tr>
+                              <th>USV Ownership</th>
+                              <td>{activeCompany.usv_ownership}</td>
+                            </tr>
+                            <tr>
+                              <th>Cumulative USV Investment</th>
+                              <td>{activeCompany.cumulative_usv_investment}</td>
+                            </tr>
+                            <tr>
+                              <th>Cumulative Carrying Value</th>
+                              <td>{activeCompany.cumulative_carrying_value}</td>
+                            </tr>
+                            <tr>
+                              <th>Multiple</th>
+                              <td>{activeCompany.multiple}</td>
+                            </tr>
+                            <tr>
+                              <th>Core Fund</th>
+                              <td>{activeCompany.core_fund}</td>
+                            </tr>
+                            <tr>
+                              <th>Core Fund Investment</th>
+                              <td>{activeCompany.core_fund_investment}</td>
+                            </tr>
+                            <tr>
+                              <th>Core Fund FMV</th>
+                              <td>{activeCompany.core_fund_fmv}</td>
+                            </tr>
+                            <tr>
+                              <th>Core Fund Ownership</th>
+                              <td>{activeCompany.core_fund_ownership}</td>
+                            </tr>
+                            <tr>
+                              <th>Opportunity Fund</th>
+                              <td>{activeCompany.opportunity_fund}</td>
+                            </tr>
+                            <tr>
+                              <th>Opportunity Fund Investment</th>
+                              <td>{activeCompany.opportunity_fund_investment}</td>
+                            </tr>
+                            <tr>
+                              <th>Opportunity Fund FMV</th>
+                              <td>{activeCompany.opportunity_fund_fmv}</td>
+                            </tr>
+                            <tr>
+                              <th>Opportunity Fund Ownership</th>
+                              <td>{activeCompany.opportunity_fund_ownership}</td>
+                            </tr>
                             { activeCompany.latest_valuation_date &&
-                            <React.Fragment> 
+                            <React.Fragment>
                             <tr className="section-header">
                               <th>Ownership</th>
                               <td>as of {activeCompany.latest_valuation_date}</td>
                             </tr>
-                            <tr>
-                              <th>USV Ownership</th>
-                              <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
-                            </tr>
+
                             <tr>
                               <th>Funds</th>
                               <td>{activeCompany.funds ? activeCompany.funds.map(fund => <span className={`badge fund-${fund}`}>{fund}</span>) : '' }</td>
-                            </tr>
-                            <tr>
-                              <th>USV Investment</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
                             </tr>
                             <tr>
                               <th>Carrying Value</th>
                               <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} &nbsp; {this.multipleFormat(activeCompany.multiple)} </td>
                             </tr>
                             <tr>
+                              <th>Multiple</th>
+                              <td>{this.accountingFormatMillions(activeCompany.multiple)}</td>
+                            </tr>
+                            <tr>
                               <th>Computed EV</th>
                               <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
-                            </tr> 
+                            </tr>
                             </React.Fragment>
-                          } 
+                          }
 
                             <tr>
                               <td colspan="2" class="company-edit-buttons">
