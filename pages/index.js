@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import Layout from '../components/Layout'
+import Team from '../components/Team'
 import Companies from '../components/Companies'
 import GoogleDoc from '../components/GoogleDoc'
 import GoogleLogin from 'react-google-login';
@@ -28,12 +29,12 @@ class Index extends React.Component {
     // fetch the partner's companies
     let view = ""
     if (type == "partner") {
-      view = "viwYmeWLfdNELpzD8"
+      view = ""
     }
     if (type == "categories") {
       view = "viwRvHr6T6yc5nsRt" // use partner-sorted view for categories.
     }
-    const url = `https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
+    const url = `https://api.airtable.com/v0/${process.env.AIRTABLE_COMPANIES_BASE_ID}/Companies?filterByFormula=Find(%22${term}%22%2C+${type})&view=${view}`
     const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
     const jsonCompanies = await resCompanies.json()
 
@@ -78,6 +79,7 @@ class Index extends React.Component {
     if (isNaN(number)) {
       return ""
     }
+    number = number / 1000000
     var fmt_num = parseFloat(number).toFixed(1)
     if (number<0) {
       fmt_num = "($" + (fmt_num * -1) + "mm)"
@@ -150,15 +152,16 @@ class Index extends React.Component {
       return (
           <Layout menus={menus} team={team} reset={this.reset} >
             <div className="row">
+              <div className="col-sm-2">
+                <Team reset={this.reset} menus={menus} team={team} />
                 {
                   companies &&
-                  <div className="col-sm-2">
                     <Companies companies={companies} activeQuery={activeQuery} activeCompany={activeCompany} setActiveCompany={this.setActiveCompany} activeCompanyIndex={activeCompanyIndex} />
-                  </div>
                 }
+                </div>
                 <div className="col-sm-10">
                   <div className="row">
-                    <div className="col-sm-4">
+                    <div className="col-sm-5">
                       <div className="clearfix">
                         <h2 className="company-name">{activeCompany.name}</h2>
                         <div className="ceo-faces">
@@ -170,78 +173,84 @@ class Index extends React.Component {
                       {
                         companies &&
                         <div>
-                          <table className="table" id="company-stats">
-                          <tbody>
-                            <tr className="section-header">
-                              <th>Metrics</th>
-                              <td>as of {activeCompany.latest_metrics_date}</td>
-                            </tr>
-                            <tr>
-                              <th>Cash on Hand</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
-                            </tr>
-                            <tr>
-                              <th>Burn or Earnings</th>
-                              <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
-                            </tr>
-                            { activeCompany.latest_revenue_run_rate ?
-                            <tr>
-                              <th>Revenue Run Rate</th>
-                              <td>{this.accountingFormatMillions(activeCompany.latest_revenue_run_rate)}</td>
-                            </tr>
-                            : ''
-                            }
-                            { activeCompany.financing_status &&
-                            <tr>
-                              <th>Financing Status</th>
-                              <td>{activeCompany.financing_status}</td>
-                            </tr>
-            
-                            }
-                            { activeCompany.latest_valuation_date &&
-                            <React.Fragment> 
-                            <tr className="section-header">
-                              <th>Ownership</th>
-                              <td>as of {activeCompany.latest_valuation_date}</td>
-                            </tr>
-                            <tr>
-                              <th>USV Ownership</th>
-                              <td>{this.percentFormat(activeCompany.percent_ownership)}</td>
-                            </tr>
-                            <tr>
-                              <th>Funds</th>
-                              <td>{activeCompany.funds ? activeCompany.funds.map(fund => <span className={`badge fund-${fund}`}>{fund}</span>) : '' }</td>
-                            </tr>
-                            <tr>
-                              <th>USV Investment</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
-                            </tr>
-                            <tr>
-                              <th>Carrying Value</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} &nbsp; {this.multipleFormat(activeCompany.multiple)} </td>
-                            </tr>
-                            <tr>
-                              <th>Computed EV</th>
-                              <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
-                            </tr> 
-                            </React.Fragment>
-                          } 
 
-                            <tr>
-                              <td colspan="2" class="company-edit-buttons">
-                                <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
-                                <a className="btn btn-light" href={`https://airtable.com/tblDw6nMnbLsBUyON/viw4ILnizUR2WsxJU/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblRHx5A9pgEIUNGP/viw5wx0eAbR9Hxc6X?blocks=hide" target="_airtable">Transactions</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblwvszzdJFQX8UQP/viwda2fq4V1Hwt52z?blocks=hide" target="_airtable">Valuations</a> &nbsp;
-                                <a className="btn btn-light" href="https://airtable.com/tblc8af4nqyxPW29z/viwrbrtQkpti8rEXu?blocks=hide" target="_airtable">Metrics</a>
-                              </td>
-                            </tr>
+                          <h3 class="section-header">USV Ownership</h3>
+
+                          <table className="usv-data" id="company-stats">
+                            <tbody>
+                              <tr>
+                                <th>&nbsp;</th>
+                                <th>Amount Invested</th>
+                                <th>Carrying Value</th>
+                                <th>Ownership</th>
+                              </tr>
+                              {activeCompany.core_fund_investment >0 &&
+                              <tr>
+                                <th>{activeCompany.core_fund}</th>
+                                <td>{this.accountingFormatMillions(activeCompany.core_fund_investment)}</td>
+                                <td>
+                                  {this.accountingFormatMillions(activeCompany.core_fund_fmv)}&nbsp;({activeCompany.core_fund_multiple})
+                                </td>
+                                <td></td>
+                              </tr>
+                              }
+                              {activeCompany.opportunity_fund_investment >0 &&
+                              <tr>
+                                <th>{activeCompany.opportunity_fund}</th>
+                                <td>{this.accountingFormatMillions(activeCompany.opportunity_fund_investment)}</td>
+                                <td>
+                                  {this.accountingFormatMillions(activeCompany.opportunity_fund_fmv)}&nbsp;({activeCompany.opportunity_fund_multiple})
+                                </td>
+                                <td></td>
+                              </tr>
+                              }
+                              <tr class="total">
+                                <th>Total</th>
+                                <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
+                                <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} ({activeCompany.multiple})</td>
+                                <td>{activeCompany.usv_ownership}</td>
+                              </tr>
                             </tbody>
                           </table>
+
+                          <br />
+
+                        <h3 class="section-header">Key Metrics</h3>
+                          <table class="usv-data">
+                             <tr>
+                               <th>Cash on Hand</th>
+                               <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
+                              </tr>
+                              <tr>
+                               <th>Burn or Earnings</th>
+                                <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
+                             </tr>
+                             <tr>
+                               <th>Headcount</th>
+                               <td>{activeCompany.latest_headcount}</td>
+                             </tr>
+                            <tr>
+                              <th>Total Raised</th>
+                              <td>{this.accountingFormatMillions(activeCompany.total_amount_raised)}</td>
+                            </tr>
+                            <tr>
+                              <th>Major Co-investors</th>
+                              <td colspan="2">{activeCompany.major_investors}</td>
+                            </tr>
+                             <tr>
+                             <th>Financing Status</th>
+                              <td colspan="3">{activeCompany.financing_status}</td>
+                             </tr>
+                          </table>
+
+                          <br />
+                          <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
+                                <a className="btn btn-light" href={`https://airtable.com/tblUkQWZIrttZ5wDL/viwnet4uSCne1QPmf/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details in Airtable</a> &nbsp;
+
                         </div>
                       }
                     </div>
-                  <div className={companies ? "col-sm-8" : "col-sm-12"}>
+                  <div className={companies ? "col-sm-7" : "col-sm-12"}>
                     <GoogleDoc url={companies ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                   </div>
                 </div>

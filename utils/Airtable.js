@@ -20,7 +20,7 @@ async function getTeam() {
 async function getPartnerCompanies(partnerName) {
   //let name = partnerName.toLowerCase()
   let name = partnerName
-  let res = await fetch(`https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%partner%7D%3D'${name}`, {
+  let res = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_COMPANIES_BASE_ID}/Companies?filterByFormula=%partner%7D%3D'${name}`, {
     headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` }
   })
   /*let res = await fetch(`https://api.airtable.com/v0/appTDiBNIJawBi2l5/Companies?filterByFormula=%partner%7D%3D'${name}'&view=USV+Portfolio+Companies`, {
