@@ -79,6 +79,7 @@ class Index extends React.Component {
     if (isNaN(number)) {
       return ""
     }
+    number = number / 1000000
     var fmt_num = parseFloat(number).toFixed(1)
     if (number<0) {
       fmt_num = "($" + (fmt_num * -1) + "mm)"
@@ -160,7 +161,7 @@ class Index extends React.Component {
                 </div>
                 <div className="col-sm-10">
                   <div className="row">
-                    <div className="col-sm-6">
+                    <div className="col-sm-5">
                       <div className="clearfix">
                         <h2 className="company-name">{activeCompany.name}</h2>
                         <div className="ceo-faces">
@@ -172,132 +173,84 @@ class Index extends React.Component {
                       {
                         companies &&
                         <div>
-                          <table className="table" id="company-stats">
-                          <tbody>
-                            {/*<tr className="section-header">
-                              <th>Metrics</th>
-                              <td>as of {activeCompany.latest_metrics_date}</td>
-                            </tr>*/}
+
+                          <h3 class="section-header">USV Ownership</h3>
+
+                          <table className="usv-data" id="company-stats">
+                            <tbody>
+                              <tr>
+                                <th>&nbsp;</th>
+                                <th>Amount Invsted</th>
+                                <th>Carrying Value</th>
+                                <th>Ownership</th>
+                              </tr>
+                              {activeCompany.core_fund_investment >0 && 
+                              <tr>
+                                <th>{activeCompany.core_fund}</th>
+                                <td>{this.accountingFormatMillions(activeCompany.core_fund_investment)}</td>
+                                <td>
+                                  {this.accountingFormatMillions(activeCompany.core_fund_fmv)}&nbsp;({activeCompany.core_fund_multiple})
+                                </td>
+                                <td></td>
+                              </tr>
+                              }
+                              {activeCompany.opportunity_fund_investment >0 &&
+                              <tr>
+                                <th>{activeCompany.opportunity_fund}</th>
+                                <td>{this.accountingFormatMillions(activeCompany.opportunity_fund_investment)}</td>
+                                <td>
+                                  {this.accountingFormatMillions(activeCompany.opportunity_fund_fmv)}&nbsp;({activeCompany.opportunity_fund_multiple})
+                                </td>
+                                <td></td>
+                              </tr>
+                              }
+                              <tr class="total">
+                                <th>Total</th>
+                                <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
+                                <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} ({activeCompany.multiple})</td>
+                                <td>{activeCompany.usv_ownership}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <br />
+
+                        <h3 class="section-header">Key Metrics</h3>
+                          <table class="usv-data">
+                             <tr>
+                               <th>Cash on Hand</th>
+                               <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
+                              </tr>
+                              <tr>
+                               <th>Burn or Earnings</th>
+                                <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
+                             </tr>
                              <tr>
                                <th>Headcount</th>
                                <td>{activeCompany.latest_headcount}</td>
                              </tr>
                             <tr>
-                              <th>Cash on Hand</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
-                            </tr>
-                             { activeCompany.burn_or_earnings &&
-                               <tr>
-                              <th>Burn or Earnings</th>
-                              <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
-                            </tr> }
-                            { activeCompany.latest_revenue_run_rate ?
-                            <tr>
-                              <th>Revenue Run Rate</th>
-                              <td>{this.accountingFormatMillions(activeCompany.latest_revenue_run_rate)}</td>
-                            </tr>
-                            : ''
-                            }
-                            { activeCompany.financing_status &&
-                            <tr>
-                              <th>Financing Status</th>
-                              <td>{activeCompany.financing_status}</td>
-                            </tr>
-                            }
-                            <tr>
-                              <th>Total Amount Raised</th>
-                              <td>{activeCompany.total_amount_raised}</td>
+                              <th>Total Raised</th>
+                              <td>{this.accountingFormatMillions(activeCompany.total_amount_raised)}</td>
                             </tr>
                             <tr>
                               <th>Major Co-investors</th>
-                              <td>{activeCompany.major_investors}</td>
+                              <td colspan="2">{activeCompany.major_investors}</td>
                             </tr>
-                            <tr>
-                              <th>USV Ownership</th>
-                              <td>{activeCompany.usv_ownership}</td>
-                            </tr>
-                            <tr>
-                              <th>Cumulative USV Investment</th>
-                              <td>{activeCompany.cumulative_usv_investment}</td>
-                            </tr>
-                            <tr>
-                              <th>Cumulative Carrying Value</th>
-                              <td>{activeCompany.cumulative_carrying_value}</td>
-                            </tr>
-                            <tr>
-                              <th>Multiple</th>
-                              <td>{activeCompany.multiple}</td>
-                            </tr>
-                            <tr>
-                              <th>Core Fund</th>
-                              <td>{activeCompany.core_fund}</td>
-                            </tr>
-                            <tr>
-                              <th>Core Fund Investment</th>
-                              <td>{activeCompany.core_fund_investment}</td>
-                            </tr>
-                            <tr>
-                              <th>Core Fund FMV</th>
-                              <td>{activeCompany.core_fund_fmv}</td>
-                            </tr>
-                            <tr>
-                              <th>Core Fund Ownership</th>
-                              <td>{activeCompany.core_fund_ownership}</td>
-                            </tr>
-                            <tr>
-                              <th>Opportunity Fund</th>
-                              <td>{activeCompany.opportunity_fund}</td>
-                            </tr>
-                            <tr>
-                              <th>Opportunity Fund Investment</th>
-                              <td>{activeCompany.opportunity_fund_investment}</td>
-                            </tr>
-                            <tr>
-                              <th>Opportunity Fund FMV</th>
-                              <td>{activeCompany.opportunity_fund_fmv}</td>
-                            </tr>
-                            <tr>
-                              <th>Opportunity Fund Ownership</th>
-                              <td>{activeCompany.opportunity_fund_ownership}</td>
-                            </tr>
-                            { activeCompany.latest_valuation_date &&
-                            <React.Fragment>
-                            <tr className="section-header">
-                              <th>Ownership</th>
-                              <td>as of {activeCompany.latest_valuation_date}</td>
-                            </tr>
-
-                            <tr>
-                              <th>Funds</th>
-                              <td>{activeCompany.funds ? activeCompany.funds.map(fund => <span className={`badge fund-${fund}`}>{fund}</span>) : '' }</td>
-                            </tr>
-                            <tr>
-                              <th>Carrying Value</th>
-                              <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} &nbsp; {this.multipleFormat(activeCompany.multiple)} </td>
-                            </tr>
-                            <tr>
-                              <th>Multiple</th>
-                              <td>{this.accountingFormatMillions(activeCompany.multiple)}</td>
-                            </tr>
-                            <tr>
-                              <th>Computed EV</th>
-                              <td>{this.accountingFormatMillions(activeCompany.estimated_enterprise_value)}</td>
-                            </tr>
-                            </React.Fragment>
-                          }
-
-                            <tr>
-                              <td colspan="2" class="company-edit-buttons">
-                                <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
-                                <a className="btn btn-light" href={`https://airtable.com/tblUkQWZIrttZ5wDL/viwnet4uSCne1QPmf/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details in Airtable</a> &nbsp;
-                              </td>
-                            </tr>
-                            </tbody>
+                             <tr>
+                             <th>Financing Status</th>
+                              <td colspan="3">{activeCompany.financing_status}</td>
+                             </tr>
                           </table>
+
+                          <br />
+                          <a className="btn btn-light" href={activeCompany.one_pager_url} target="_blank">One Pager</a> &nbsp;
+                                <a className="btn btn-light" href={`https://airtable.com/tblUkQWZIrttZ5wDL/viwnet4uSCne1QPmf/${activeCompany.airtable_id}?blocks=hide`} target="_airtable">Details in Airtable</a> &nbsp;
+
                         </div>
                       }
                     </div>
-                  <div className={companies ? "col-sm-6" : "col-sm-12"}>
+                  <div className={companies ? "col-sm-7" : "col-sm-12"}>
                     <GoogleDoc url={companies ? `${activeCompany.notes_gdoc_url}` : "https://docs.google.com/document/d/1Am1qQ4RMqJgXOtPxZfVOeFdLVjH1IMxhl6Z5GiKDvDE/edit"} />
                   </div>
                 </div>

@@ -31,6 +31,7 @@
 h2.company-name {
   float: left;
   font-weight: 700;
+  font-size: 50px;
 }
 .ceo-faces {
   float: right;
@@ -94,7 +95,14 @@ h2.company-name {
   margin-top: 0px;
   padding-top: 0;
 }
-
+h3.section-header {
+  background: #ddd;
+  padding: 6px 12px 6px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size:80%;
+  color: #444;
+}
 tr.section-header {
   background: #ddd;
 }
@@ -112,10 +120,21 @@ tr.section-header td {
 tr.section-header td {
   text-align: right;
 }
+
+/* Tables */
+table.usv-data th {
+  text-align: left;
+  white-space: nowrap;
+  padding: 10px 20px 10px 0;
+}
+table.usv-data td {
+  padding: 10px 20px 10px 0;
+}
+tr.total td,
+tr.total th {
+  border-top: 1px solid #000;
+}
 #company-stats th {
-  white-space:nowrap;
-  width: 175px;
-  text-align: right;
 }
 .badge {
   background: #ccc;
