@@ -163,7 +163,7 @@ class Index extends React.Component {
                   <div className="row">
                     <div className="col-sm-5">
                       <div className="clearfix">
-                        <h2 className="company-name">{activeCompany.name}</h2>
+                        <h2 className="company-name">{activeCompany.company_name}</h2>
                         <div className="ceo-faces">
                           {
                             activeCompany.ceo_faces ? activeCompany.ceo_faces.map(ceo => <img className="img-md circular margin-right-sml margin-bottom-sml flex-column" src={ceo.url} /> ) : ''
@@ -191,24 +191,24 @@ class Index extends React.Component {
                                 <td>
                                   {this.accountingFormatMillions(activeCompany.core_fund_fmv)}&nbsp;({activeCompany.core_fund_multiple})
                                 </td>
-                                <td></td>
+                                <td>{this.percentFormat(activeCompany.core_fund_ownership)}</td>
                               </tr>
                               }
-                              {activeCompany.opportunity_fund_investment >0 &&
+                              {activeCompany.oppty_fund_investment >0 &&
                               <tr>
-                                <th>{activeCompany.opportunity_fund}</th>
-                                <td>{this.accountingFormatMillions(activeCompany.opportunity_fund_investment)}</td>
+                                <th>{activeCompany.oppty_fund}</th>
+                                <td>{this.accountingFormatMillions(activeCompany.oppty_fund_investment)}</td>
                                 <td>
-                                  {this.accountingFormatMillions(activeCompany.opportunity_fund_fmv)}&nbsp;({activeCompany.opportunity_fund_multiple})
+                                  {this.accountingFormatMillions(activeCompany.oppty_fund_fmv)}&nbsp;({activeCompany.oppty_fund_multiple})
                                 </td>
-                                <td></td>
+                                <td>{this.percentFormat(activeCompany.oppty_fund_ownership)}</td>
                               </tr>
                               }
                               <tr class="total">
                                 <th>Total</th>
-                                <td>{this.accountingFormatMillions(activeCompany.cumulative_usv_investment)}</td>
-                                <td>{this.accountingFormatMillions(activeCompany.cumulative_carrying_value)} ({activeCompany.multiple})</td>
-                                <td>{activeCompany.usv_ownership}</td>
+                                <td>{this.accountingFormatMillions(activeCompany.total_amount_invested)}</td>
+                                <td>{this.accountingFormatMillions(activeCompany.total_carrying_value)} ({activeCompany.multiple})</td>
+                                <td>{this.percentFormat(activeCompany.usv_ownership)}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -227,7 +227,7 @@ class Index extends React.Component {
                              </tr>
                              <tr>
                                <th>Headcount</th>
-                               <td>{activeCompany.latest_headcount}</td>
+                               <td>{activeCompany.headcount}</td>
                              </tr>
                             <tr>
                               <th>Total Raised</th>
@@ -235,7 +235,7 @@ class Index extends React.Component {
                             </tr>
                             <tr>
                               <th>Major Co-investors</th>
-                              <td colspan="2">{activeCompany.major_investors}</td>
+                              <td colspan="2">{activeCompany.major_co_investors}</td>
                             </tr>
                              <tr>
                              <th>Financing Status</th>
