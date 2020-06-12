@@ -1,0 +1,191 @@
+/* this stylesheet is for one-off specific component styles */
+
+#logo {
+  margin-bottom: 15px;
+  width: 75px;
+  height: 75px;
+}
+#nav ul {
+  padding: 0 0 10px;
+}
+#nav li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#nav li a.nav-link {
+  padding: 0;
+  margin: 0 0 3px;
+}
+.team-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  width: 100px;
+}
+.team-wrapper img {
+  border-radius: 50px;
+}
+
+h2.company-name {
+  float: left;
+  font-weight: 700;
+  font-size: 50px;
+}
+.ceo-faces {
+  float: right;
+}
+.person-avatar--active {
+  box-shadow: inset 0px 0px 0px 10px #509d5d;
+  border-radius: 50px;
+}
+
+.screenshot {
+  width: 100%;
+  border: 6px solid #ccc;
+  border-top: 25px solid #ccc;
+  border-radius: 5px;
+}
+
+.companies-wrapper {
+  min-width: 180px;
+}
+
+.companies-wrapper-item {
+  padding: 4px 8px;
+  margin: 0 0 5px;
+}
+
+.companies-wrapper-item--active {
+  background: #509d5d !important;
+  color: white !important;
+}
+.companies-wrapper-item:hover {
+  background: #ddd;
+  color: black;
+}
+.companies-wrapper p {
+  margin: 0;
+  color: #333;
+}
+
+.nav-arrow {
+  display: inline-block;
+  background: #cfcfcf;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.nav-arrow .material-icons {
+  position: relative;
+  top: 3px
+}
+
+.material-icons {
+  width: 24px;
+  color: black !important;
+}
+
+.inner-content, .inner-content .column {
+  margin-top: 0px;
+  padding-top: 0;
+}
+h3.section-header {
+  background: #ddd;
+  padding: 6px 12px 6px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size:80%;
+  color: #444;
+}
+tr.section-header {
+  background: #ddd;
+}
+tr.section-header th,
+tr.section-header td {
+  padding: 6px 12px 6px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size:80%;
+  color: #444;
+}
+#company-stats tr.section-header th {
+  text-align: left;
+}
+tr.section-header td {
+  text-align: right;
+}
+
+/* Tables */
+table.usv-data th {
+  text-align: left;
+  white-space: nowrap;
+  padding: 10px 20px 10px 0;
+}
+table.usv-data td {
+  padding: 10px 20px 10px 0;
+}
+tr.total td,
+tr.total th {
+  border-top: 1px solid #000;
+}
+#company-stats th {
+}
+.badge {
+  background: #ccc;
+  margin-right: 5px;
+  font-weight: normal;
+  font-size: 15px;
+}
+.badge.fund-2004 {
+  background: #cfdefe;
+}
+.badge.fund-2008 {
+  background: #ede1fe;
+}
+.badge.fund-2012 {
+  background: #fdeab6;
+}
+.badge.fund-2014 {
+  background: #fcdce5;
+}
+.badge.fund-2016 {
+  background: #d0f7c3;
+}
+.badge.fund-2019 {
+  background: #ede1fe;
+}
+.badge.fund-Oppty {
+  background: #edeeed;
+}
+.badge.fund-2014.Oppty{
+  background: #d0effc;
+}
+.badge.fund-2019.Oppty{
+  background: #72dcc3;
+}
+.nav-links-container li {
+  margin-bottom: 10px;
+}
+a.nav-link {
+  padding: 5px 0 5px 3px;
+
+}
+.nav-item.person img {
+  border-radius: 50px;
+}
+.company-edit-buttons a.btn {
+  font-size: .9em;
+  margin-bottom: 10px;
+}
+.alert {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align:center;
+}

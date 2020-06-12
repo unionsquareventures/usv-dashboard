@@ -1,0 +1,5 @@
+
+To Dos:
+
+ * remove crypto companies from the displayed companies
+ * when you click a partner face, it should load their first company, rather than a blank template
