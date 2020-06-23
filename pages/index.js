@@ -56,12 +56,16 @@ class Index extends React.Component {
     }
 
     // filter out anything we want to filter out
-    let final_companies = []
-    for (var i in companies) {
-      if (companies[i].fields.show_in_dash) {
-        final_companies.push(companies[i])
-      }
+    let final_companies = null
+    if (companies) {
+      final_companies = []
+      for (var i in companies) {
+        if (companies[i].fields.show_in_dash) {
+          final_companies.push(companies[i])
+        }
+      }  
     }
+    
 
     return {
       menus: jsonMenus.records,
