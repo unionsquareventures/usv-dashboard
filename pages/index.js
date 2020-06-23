@@ -227,30 +227,40 @@ class Index extends React.Component {
 
                         <h3 class="section-header">Key Metrics</h3>
                           <table class="usv-data">
+                           <tr>
+                             <th>Financing Status</th>
+                              <td colspan="3">{activeCompany.financing_status}</td>
+                             </tr>
+                             {activeCompany.cash_on_hand &&
                              <tr>
                                <th>Cash on Hand</th>
                                <td>{this.accountingFormatMillions(activeCompany.cash_on_hand)}</td>
                               </tr>
+                              } 
+                              {activeCompany.burn_or_earnings && 
                               <tr>
                                <th>Burn or Earnings</th>
                                 <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                              </tr>
+                             }
+                             {activeCompany.headcount && 
                              <tr>
                                <th>Headcount</th>
                                <td>{activeCompany.headcount}</td>
                              </tr>
+                             }
+                             {activeCompany.total_amount_raised && 
                             <tr>
                               <th>Total Raised</th>
                               <td>{this.accountingFormatMillions(activeCompany.total_amount_raised)}</td>
                             </tr>
+                            }
+                            {activeCompany.major_co_investors &&
                             <tr>
                               <th>Major Co-investors</th>
                               <td colspan="2">{activeCompany.major_co_investors}</td>
                             </tr>
-                             <tr>
-                             <th>Financing Status</th>
-                              <td colspan="3">{activeCompany.financing_status}</td>
-                             </tr>
+                            }
                           </table>
 
                           <br />
