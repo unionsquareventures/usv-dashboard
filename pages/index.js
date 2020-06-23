@@ -225,7 +225,7 @@ class Index extends React.Component {
 
                           <br />
 
-                        <h3 class="section-header">Key Metrics</h3>
+                        <h3 class="section-header">Key Metrics (as of {activeCompany.data_fresh_as_of})</h3>
                           <table class="usv-data">
                            <tr>
                              <th>Financing Status</th>
