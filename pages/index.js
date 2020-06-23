@@ -48,16 +48,26 @@ class Index extends React.Component {
 
     // return as props
     let companies = null
+
     if (type == "categories") {
       companies = jsonCompanies.records ? jsonCompanies.records : null
     } else {
       companies = jsonCompanies.records ? shuffle(jsonCompanies.records) : null
     }
+
+    // filter out anything we want to filter out
+    let final_companies = []
+    for (var i in companies) {
+      if (companies[i].fields.show_in_dash) {
+        final_companies.push(companies[i])
+      }
+    }
+
     return {
       menus: jsonMenus.records,
       /*team: shuffle(jsonTeam.records),*/
       team: [],
-      companies: companies,
+      companies: final_companies,
       activeQuery: term.length > 0 ? term : null,
     }
   }
