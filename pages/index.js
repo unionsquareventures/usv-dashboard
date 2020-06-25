@@ -247,6 +247,12 @@ class Index extends React.Component {
                                 <td>{this.accountingFormatMillions(activeCompany.burn_or_earnings)}</td>
                              </tr>
                              }
+                             {activeCompany.debt && 
+                              <tr>
+                               <th>Debt</th>
+                                <td>{this.accountingFormatMillions(activeCompany.debt)}</td>
+                             </tr>
+                             }
                              {activeCompany.headcount && 
                              <tr>
                                <th>Headcount</th>
