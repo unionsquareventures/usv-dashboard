@@ -21,5 +21,18 @@ module.exports = {
     */
     config.plugins.push(new webpack.DefinePlugin(env));
     return config
-  }
+  },
+
+  /*
+  async redirects() {
+    return [
+      {
+        source: '/gmailbookmark', // automatically handles all locales
+        destination: 'https://google.com', // automatically passes the locale on
+        permanent: true,
+      },
+    ]
+  },
+  */
+
 }
