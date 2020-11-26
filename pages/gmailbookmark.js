@@ -14,25 +14,41 @@ class GmailBookmark extends React.Component {
 	    let companies = null
 	  	companies = jsonCompanies.records ? jsonCompanies.records : null   
 
-	  	/*
+	  	let redirectString = "https://mail.google.com/mail/u/0/#search/from%3A("
+
+  		for (const i in companies) {
+  			if (companies[i].fields.domain) {
+	  			redirectString += companies[i].fields.domain + " OR "	
+  			}
+  			if (companies[i].fields.alternate_domains) {
+  				let ads = companies[i].fields.alternate_domains.split(",")
+  				for (const j in ads) {
+  					redirectString += ads[j] + " OR "	
+  				}
+  			}
+  		}
+
+  		redirectString += ")+and+is%3Aimportant"
+
 	  	if (res) {
 		    res.writeHead(301, {
-		      Location: 'https://google.com'
+		      Location: redirectString
 		    });
 		    res.end();
 		  } 
-		*/
 
 	    return {
-	    	companies: companies
+	    	companies: companies,
+	    	redirectString: redirectString
 	    }
 	}
 
   render() {
-  	const {companies} = this.props
+  	const {companies, redirectString} = this.props
 
   	return (
   		<div>
+	  		<div>{redirectString}</div>
   		{	
   		companies &&
   			<div>
