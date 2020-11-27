@@ -14,7 +14,7 @@ class GmailBookmark extends React.Component {
 	    let companies = null
 	  	companies = jsonCompanies.records ? jsonCompanies.records : null   
 
-	  	let redirectString = "https://mail.google.com/mail/u/0/#search/from%3A("
+	  	let redirectString = "https://mail.google.com/mail/u/0/#search/is%3Aimportant+from%3A("
 
   		for (const i in companies) {
   			if (companies[i].fields.domain) {
@@ -28,7 +28,7 @@ class GmailBookmark extends React.Component {
   			}
   		}
 
-  		redirectString += ")+and+is%3Aimportant"
+  		redirectString += ")"
 
 	  	if (res) {
 		    res.writeHead(301, {
