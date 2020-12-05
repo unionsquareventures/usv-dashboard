@@ -4,11 +4,11 @@ class GmailBookmark extends React.Component {
 	    
 	    // http://localhost:3000/gmailbookmark?partner=Rebecca
 	    const partner = query.partner ? query.partner : null
-	    console.log(partner)
+	    // console.log(partner)
 
 	    const urlBase = `https://api.airtable.com/v0/${process.env.AIRTABLE_COMPANIES_BASE_ID}/Companies`
 	    const url = partner ? urlBase + "?filterByFormula=" + encodeURIComponent('partner="' + partner + '"') : urlBase
-	    console.log(url)
+	    // console.log(url)
 
 	    const resCompanies = await fetch(url, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_KEY}` } })
 	    const jsonCompanies = await resCompanies.json()
