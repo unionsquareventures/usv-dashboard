@@ -29,14 +29,12 @@ class GmailBookmark extends React.Component {
   		let redirectString = "https://mail.google.com/mail/u/0/#search/" + encodeURIComponent(params)  + ")"
 		// console.log(redirectString)
 
-		/*
 	  	if (res) {
 		    res.writeHead(301, {
 		      Location: redirectString
 		    });
 		    res.end();
 		  }
-		*/ 
 
 	    return {
 	    	companies: companies,
